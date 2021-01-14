@@ -1,13 +1,14 @@
 import React from 'react';
 
 import * as S from './styles';
+import Label from '../Label';
 
-const Label = ({title = 'Label'}) => {
+const Rodape = () => {
   return (
     <S.Container>
-      <S.Text>{title}</S.Text>
+      <Label title="Rodapé" />
     </S.Container>
   );
 };
 
-export default Label;
+export default Rodape;

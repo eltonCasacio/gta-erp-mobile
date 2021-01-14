@@ -1,10 +1,12 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  background-color: red;
-
   display: flex;
   flex: 1;
-  justify-content: center;
-  align-items: center;
+  background-color: rgba(46, 50, 110, 1);
+`;
+
+export const Content = styled.View`
+  display: flex;
+  flex: 1;
 `;

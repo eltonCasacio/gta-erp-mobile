@@ -6,16 +6,22 @@
  * @flow strict-local
  */
 
-import * as S from './styles/global';
 import React from 'react';
+import * as S from './styles/principal';
+
+import Routes from './routes';
+
+import Rodape from './components/Rodape';
 
 const App = () => {
   return (
-    <>
-      <S.Wrapper>
-        <S.Text>App</S.Text>
-      </S.Wrapper>
-    </>
+    <S.Container>
+      <S.Container>
+        <Routes />
+      </S.Container>
+
+      <Rodape />
+    </S.Container>
   );
 };
 
