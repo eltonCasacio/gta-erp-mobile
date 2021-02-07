@@ -12,13 +12,13 @@ import * as S from './styles/principal';
 // import Routes from './routes';
 
 import Rodape from './components/Rodape';
-import Input from './components/Input';
+import Menu from './components/Menu';
 
 const App = () => {
   return (
     <S.Container>
       <S.Container>
-        <Input placeholder="Input" />
+        <Menu />
       </S.Container>
 
       <Rodape />

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Menu> Testing layout/styles 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#5762F2",
+      "height": 85,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingBottom": 5,
+      "paddingLeft": 5,
+      "paddingRight": 5,
+      "paddingTop": 5,
+      "width": 80,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFFAFA",
+          "fontSize": 16,
+        },
+      ]
+    }
+  >
+    Menu
+  </Text>
+</View>
+`;

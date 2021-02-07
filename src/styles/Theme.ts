@@ -4,7 +4,6 @@ const Theme = {
     secondary: '#5762F2',
     white: '#FFFAFA',
     inputCard: '#F5F5F5',
-    text: '#AEAEAE',
     textCardBold: '#707070',
     border: '#BCBCBC'
   },

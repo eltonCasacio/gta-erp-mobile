@@ -1,13 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import * as S from './styles';
 
-const Menu = () => {
+const Menu = ({label = 'Menu'}) => {
   return (
-    <>
-      <View>
-        <Text>Menu</Text>
-      </View>
-    </>
+    <S.Wrapper>
+      <S.Text>{label}</S.Text>
+    </S.Wrapper>
   );
 };
 
