@@ -1,13 +1,12 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import * as S from './styles';
 
 const Logo = () => {
   return (
-    <>
-      <View>
-        <Text>Logo</Text>
-      </View>
-    </>
+    <S.Wrapper
+      source={require('../../assets/logo.png')}
+      accessibilityLabel="Logo da GTA"
+    />
   );
 };
 
