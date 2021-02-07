@@ -1,11 +1,11 @@
 import React from 'react';
-import render from 'react-test-renderer';
+import renderer from 'react-test-renderer';
 
-import Label from '../components/Label';
+import Label from '.';
 
 describe('<Label />', () => {
   test('Estrutura do layout', () => {
-    const labelJson = render.create(<Label />).toJSON();
+    const labelJson = renderer.create(<Label />).toJSON();
     const child = labelJson.children;
 
     expect(labelJson.type).toEqual('View');
@@ -14,5 +14,7 @@ describe('<Label />', () => {
 
     expect(child[0].children).toHaveLength(1);
     expect(typeof child[0].children[0]).toEqual('string');
+
+    expect(labelJson).toMatchSnapshot();
   });
 });

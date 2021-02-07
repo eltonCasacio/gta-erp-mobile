@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input> Testing layout and style 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#F5F5F5",
+        "borderRadius": 3,
+        "width": 270,
+      },
+    ]
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    placeholder="placeholder"
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "color": "#070E70",
+          "fontSize": 22,
+        },
+      ]
+    }
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;

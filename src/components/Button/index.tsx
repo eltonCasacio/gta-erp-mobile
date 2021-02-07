@@ -1,13 +1,13 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Text} from 'react-native';
 
-const Button = () => {
+import * as S from './styles';
+
+const Button = ({children = 'Button'}) => {
   return (
-    <>
-      <View>
-        <Text>Button</Text>
-      </View>
-    </>
+    <S.Wrapper>
+      <S.Text>{children}</S.Text>
+    </S.Wrapper>
   );
 };
 

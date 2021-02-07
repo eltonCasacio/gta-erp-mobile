@@ -1,5 +1,13 @@
 import styled from 'styled-components/native';
+import Theme from '../../styles/Theme';
 
 export const Wrapper = styled.View`
-  background-color: red;
+  width: 270px;
+  background-color: ${Theme.Colors.inputCard};
+  border-radius: ${Theme.BorderRadios.small};
+`;
+
+export const Text = styled.TextInput`
+  color: ${Theme.Colors.primary};
+  font-size: ${Theme.Font.great};
 `;
