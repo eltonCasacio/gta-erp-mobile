@@ -29,7 +29,7 @@ exports[`<Button /> Teste de Estrutura 1`] = `
     style={
       Array [
         Object {
-          "color": "#FFFAFA",
+          "color": "#fafafa",
           "fontSize": 22,
         },
       ]

@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Timeline /> should render default styles 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fafafa",
+        "justifyContent": "space-around",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "marginBottom": 10,
+          "marginLeft": 0,
+          "marginRight": 0,
+          "marginTop": 10,
+        },
+      ]
+    }
+  >
+    <Text
+      checked={true}
+      style={
+        Array [
+          Object {
+            "color": "#707070",
+            "marginLeft": 10,
+          },
+        ]
+      }
+    >
+      Entrada:
+    </Text>
+    <Text
+      checked={true}
+      style={
+        Array [
+          Object {
+            "color": "#707070",
+            "marginLeft": 10,
+          },
+        ]
+      }
+    >
+      06:00
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "marginBottom": 10,
+          "marginLeft": 0,
+          "marginRight": 0,
+          "marginTop": 10,
+        },
+      ]
+    }
+  >
+    <Text
+      checked={false}
+      style={
+        Array [
+          Object {
+            "color": "#AEAEAE",
+            "marginLeft": 10,
+          },
+        ]
+      }
+    >
+      Saída:
+    </Text>
+    <Text
+      checked={true}
+      style={
+        Array [
+          Object {
+            "color": "#707070",
+            "marginLeft": 10,
+          },
+        ]
+      }
+    >
+      10:00
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "marginBottom": 10,
+          "marginLeft": 0,
+          "marginRight": 0,
+          "marginTop": 10,
+        },
+      ]
+    }
+  >
+    <Text
+      checked={false}
+      style={
+        Array [
+          Object {
+            "color": "#AEAEAE",
+            "marginLeft": 10,
+          },
+        ]
+      }
+    >
+      Saída:
+    </Text>
+    <Text
+      checked={true}
+      style={
+        Array [
+          Object {
+            "color": "#707070",
+            "marginLeft": 10,
+          },
+        ]
+      }
+    >
+      12:00
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "marginBottom": 10,
+          "marginLeft": 0,
+          "marginRight": 0,
+          "marginTop": 10,
+        },
+      ]
+    }
+  >
+    <Text
+      checked={false}
+      style={
+        Array [
+          Object {
+            "color": "#AEAEAE",
+            "marginLeft": 10,
+          },
+        ]
+      }
+    >
+      Saída:
+    </Text>
+    <Text
+      checked={true}
+      style={
+        Array [
+          Object {
+            "color": "#707070",
+            "marginLeft": 10,
+          },
+        ]
+      }
+    >
+      18:00
+    </Text>
+  </View>
+</View>
+`;

@@ -3,7 +3,7 @@ import Theme from '../../styles/Theme';
 
 export const Wrapper = styled.View`
   width: 270px;
-  background-color: ${Theme.Colors.inputCard};
+  background-color: ${Theme.Colors.white};
   border-radius: ${Theme.BorderRadios.small};
 `;
 

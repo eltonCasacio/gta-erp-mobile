@@ -6,7 +6,7 @@ export const Wrapper = styled.TouchableOpacity`
   width: 200px;
   border-radius: ${Theme.BorderRadios.great};
   background-color: ${Theme.Colors.secondary};
-  padding: ${Theme.Padding.medium} ${Theme.Padding.great};
+  padding: ${Theme.Spacings.medium} ${Theme.Spacings.great};
 `;
 
 export const Text = styled.Text`

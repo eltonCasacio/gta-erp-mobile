@@ -2,23 +2,20 @@ const Theme = {
   Colors: {
     primary: '#070E70',
     secondary: '#5762F2',
-    white: '#FFFAFA',
-    inputCard: '#F5F5F5',
-    textCardBold: '#707070',
-    border: '#BCBCBC'
+    white: '#fafafa',
+    gray: '#AEAEAE',
+    grayBold: '#707070'
   },
   Font: {
     small: '12px',
     medium: '16px',
     great: '22px'
   },
-  Padding: {
+  Spacings: {
     small: '5px',
     medium: '10px',
     great: '15px'
   },
-  Spacings: {},
-  Border: {},
   BorderRadios: {
     small: '3px',
     medium: '10px',

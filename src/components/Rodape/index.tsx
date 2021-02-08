@@ -1,12 +1,11 @@
 import React from 'react';
 
 import * as S from './styles';
-import Label from '../Label';
 
 const Rodape = () => {
   return (
     <S.Container>
-      <Label title="Rodapé" />
+      <S.Text>Rodapé</S.Text>
     </S.Container>
   );
 };

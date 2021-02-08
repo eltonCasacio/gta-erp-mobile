@@ -30,7 +30,7 @@ exports[`<Menu> Testing layout/styles 1`] = `
     style={
       Array [
         Object {
-          "color": "#FFFAFA",
+          "color": "#fafafa",
           "fontSize": 16,
         },
       ]

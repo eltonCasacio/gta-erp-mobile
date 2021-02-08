@@ -6,7 +6,7 @@ export const Wrapper = styled.TouchableOpacity`
   align-items: center;
   width: 80px;
   height: 85px;
-  padding: ${Theme.Padding.small};
+  padding: ${Theme.Spacings.small};
   background-color: ${Theme.Colors.secondary};
 `;
 

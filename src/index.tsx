@@ -12,13 +12,13 @@ import * as S from './styles/principal';
 // import Routes from './routes';
 
 import Rodape from './components/Rodape';
-import Logo from './components/Logo';
+import Timeline from './components/Timeline';
 
 const App = () => {
   return (
     <S.Container>
       <S.Container>
-        <Logo />
+        <Timeline />
       </S.Container>
 
       <Rodape />
