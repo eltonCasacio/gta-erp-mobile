@@ -11,11 +11,11 @@ const Routes = createAppContainer(
       Payroll,
       PayslipDownload,
       PersonalData,
-      RegisterHours
+      RegisterHours,
     },
     {
       initialRouteName: 'RegisterHours',
-      backBehavior: 'order'
+      backBehavior: 'order',
     }
   )
 );

@@ -33,11 +33,15 @@ const DataTime = () => {
   useEffect(() => {
     setTimer();
 
-    setInterval(() => {
+    let interval = setInterval(() => {
       setTimer();
     }, 6000);
 
     setDateTime();
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (

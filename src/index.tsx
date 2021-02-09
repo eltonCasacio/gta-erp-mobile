@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import * as S from './styles/principal';
+import {Wrapper, Container, RodapeWrapper} from './styles/principal';
 
 // import Routes from './routes';
 
@@ -16,12 +16,15 @@ import RegisterHours from './pages/RegisterHours';
 
 const App = () => {
   return (
-    <S.Container>
-      <S.Container>
+    <Wrapper>
+      <Container>
         <RegisterHours />
-      </S.Container>
-      <Rodape />
-    </S.Container>
+      </Container>
+
+      <RodapeWrapper>
+        <Rodape />
+      </RodapeWrapper>
+    </Wrapper>
   );
 };
 
