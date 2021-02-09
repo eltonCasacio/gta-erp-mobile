@@ -1,13 +1,23 @@
 import React from 'react';
+import {Wrapper, InputContainer} from './styles';
 
-import * as S from './styles';
-import Label from '../../components/Label';
+import Logo from '../../components/Logo';
+import Input from '../../components/Input';
+import Buttom from '../../components/Button';
 
 const Login = () => {
+  const teste = () => {
+    console.log('teste');
+  };
   return (
-    <S.Container>
-      <Label title="LOGIN" />
-    </S.Container>
+    <Wrapper>
+      <Logo />
+      <InputContainer>
+        <Input placeholder="usuário" />
+        <Input placeholder="senha" />
+      </InputContainer>
+      <Buttom children="entrar" callback={teste} />
+    </Wrapper>
   );
 };
 

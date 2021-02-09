@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Login /> should render default layout 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "justifyContent": "space-between",
+        "paddingBottom": 15,
+        "paddingLeft": 15,
+        "paddingRight": 15,
+        "paddingTop": 15,
+      },
+    ]
+  }
+>
+  <Image
+    accessibilityLabel="Logo da GTA"
+    source={
+      Object {
+        "testUri": "../../../src/assets/logo.png",
+      }
+    }
+    style={
+      Array [
+        Object {},
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fafafa",
+            "borderRadius": 3,
+            "marginBottom": 5,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 5,
+          },
+        ]
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        placeholder="usuário"
+        rejectResponderTermination={true}
+        style={
+          Array [
+            Object {
+              "color": "#070E70",
+              "fontSize": 22,
+              "paddingBottom": 10,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 10,
+            },
+          ]
+        }
+        underlineColorAndroid="transparent"
+      />
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fafafa",
+            "borderRadius": 3,
+            "marginBottom": 5,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 5,
+          },
+        ]
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        placeholder="senha"
+        rejectResponderTermination={true}
+        style={
+          Array [
+            Object {
+              "color": "#070E70",
+              "fontSize": 22,
+              "paddingBottom": 10,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 10,
+            },
+          ]
+        }
+        underlineColorAndroid="transparent"
+      />
+    </View>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#5762F2",
+        "borderRadius": 200,
+        "opacity": 1,
+        "paddingBottom": 10,
+        "paddingLeft": 15,
+        "paddingRight": 15,
+        "paddingTop": 10,
+        "width": 200,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#fafafa",
+            "fontSize": 22,
+          },
+        ]
+      }
+    >
+      entrar
+    </Text>
+  </View>
+</View>
+`;

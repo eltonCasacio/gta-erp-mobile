@@ -7,7 +7,10 @@ exports[`<Input> Testing layout and style 1`] = `
       Object {
         "backgroundColor": "#fafafa",
         "borderRadius": 3,
-        "width": 270,
+        "marginBottom": 5,
+        "marginLeft": 5,
+        "marginRight": 5,
+        "marginTop": 5,
       },
     ]
   }
@@ -21,6 +24,10 @@ exports[`<Input> Testing layout and style 1`] = `
         Object {
           "color": "#070E70",
           "fontSize": 22,
+          "paddingBottom": 10,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "paddingTop": 10,
         },
       ]
     }
