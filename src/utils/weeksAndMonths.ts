@@ -5,7 +5,7 @@ export const Weeks = [
   'quarta',
   'quinta',
   'sexta',
-  'sábado'
+  'sábado',
 ];
 
 export const Months = [
@@ -20,5 +20,5 @@ export const Months = [
   'Setembro',
   'Outubro',
   'Novembro',
-  'Dezembro'
+  'Dezembro',
 ];
