@@ -12,15 +12,14 @@ import * as S from './styles/principal';
 // import Routes from './routes';
 
 import Rodape from './components/Rodape';
-import Timeline from './components/Timeline';
+import DataTime from './components/DataTime';
 
 const App = () => {
   return (
     <S.Container>
       <S.Container>
-        <Timeline />
+        <DataTime />
       </S.Container>
-
       <Rodape />
     </S.Container>
   );

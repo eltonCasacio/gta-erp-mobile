@@ -1,11 +1,17 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Wrapper, Text} from './styles';
 
-const Card = () => {
+export type CardProps = {
+  leftComponent: React.ReactNode;
+  rigthComponent: React.ReactNode;
+};
+
+const Card = ({leftComponent, rigthComponent}: CardProps) => {
   return (
-    <View>
-      <Text>Card</Text>
-    </View>
+    <Wrapper>
+      <Text>{leftComponent}</Text>
+      <Text>{rigthComponent}</Text>
+    </Wrapper>
   );
 };
 
