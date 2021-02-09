@@ -1,0 +1,213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Rodape /> should render default layout 1`] = `
+<View
+  Dimension={[Function]}
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "height": 266.8,
+        "justifyContent": "space-around",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "width": 178.57142857142856,
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5762F2",
+          "height": "100%",
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingBottom": 5,
+          "paddingLeft": 5,
+          "paddingRight": 5,
+          "paddingTop": 5,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fafafa",
+              "fontSize": 12,
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        REGISTRAR HORÁRIO
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "width": 178.57142857142856,
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5762F2",
+          "height": "100%",
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingBottom": 5,
+          "paddingLeft": 5,
+          "paddingRight": 5,
+          "paddingTop": 5,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fafafa",
+              "fontSize": 12,
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        DOWNLOAD DE HOLERITE
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "width": 178.57142857142856,
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5762F2",
+          "height": "100%",
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingBottom": 5,
+          "paddingLeft": 5,
+          "paddingRight": 5,
+          "paddingTop": 5,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fafafa",
+              "fontSize": 12,
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        RELATÓRIO DE MARCAÇÃO
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "width": 178.57142857142856,
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5762F2",
+          "height": "100%",
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingBottom": 5,
+          "paddingLeft": 5,
+          "paddingRight": 5,
+          "paddingTop": 5,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fafafa",
+              "fontSize": 12,
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        INFORMAÇÕES DA EMPRESA
+      </Text>
+    </View>
+  </View>
+</View>
+`;

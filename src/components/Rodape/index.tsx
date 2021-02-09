@@ -1,12 +1,28 @@
 import React from 'react';
+import {Wrapper, WrapperMenu} from './styles';
 
-import * as S from './styles';
+import Menu from '../Menu';
+import {Dimensions} from 'react-native';
 
 const Rodape = () => {
   return (
-    <S.Container>
-      <S.Text>Rodapé</S.Text>
-    </S.Container>
+    <Wrapper Dimension={Dimensions}>
+      <WrapperMenu>
+        <Menu label="REGISTRAR HORÁRIO" />
+      </WrapperMenu>
+
+      <WrapperMenu>
+        <Menu label="DOWNLOAD DE HOLERITE" />
+      </WrapperMenu>
+
+      <WrapperMenu>
+        <Menu label="RELATÓRIO DE MARCAÇÃO" />
+      </WrapperMenu>
+
+      <WrapperMenu>
+        <Menu label="INFORMAÇÕES DA EMPRESA" />
+      </WrapperMenu>
+    </Wrapper>
   );
 };
 

@@ -15,14 +15,14 @@ exports[`<Menu> Testing layout/styles 1`] = `
     Object {
       "alignItems": "center",
       "backgroundColor": "#5762F2",
-      "height": 85,
+      "height": "100%",
       "justifyContent": "center",
       "opacity": 1,
       "paddingBottom": 5,
       "paddingLeft": 5,
       "paddingRight": 5,
       "paddingTop": 5,
-      "width": 80,
+      "width": "100%",
     }
   }
 >
@@ -31,7 +31,8 @@ exports[`<Menu> Testing layout/styles 1`] = `
       Array [
         Object {
           "color": "#fafafa",
-          "fontSize": 16,
+          "fontSize": 12,
+          "textAlign": "center",
         },
       ]
     }
