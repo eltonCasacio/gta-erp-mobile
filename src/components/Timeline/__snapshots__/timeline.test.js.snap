@@ -7,7 +7,10 @@ exports[`<Timeline /> should render default styles 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "#fafafa",
-        "justifyContent": "space-around",
+        "paddingBottom": 0,
+        "paddingLeft": 15,
+        "paddingRight": 15,
+        "paddingTop": 0,
       },
     ]
   }
@@ -17,10 +20,12 @@ exports[`<Timeline /> should render default styles 1`] = `
       Array [
         Object {
           "flexDirection": "row",
-          "marginBottom": 10,
+          "justifyContent": "space-between",
+          "marginBottom": 5,
           "marginLeft": 0,
           "marginRight": 0,
-          "marginTop": 10,
+          "marginTop": 5,
+          "width": "100%",
         },
       ]
     }
@@ -31,12 +36,13 @@ exports[`<Timeline /> should render default styles 1`] = `
         Array [
           Object {
             "color": "#707070",
-            "marginLeft": 10,
+            "fontSize": 16,
+            "fontWeight": "bold",
           },
         ]
       }
     >
-      Entrada:
+      ENTRADA:
     </Text>
     <Text
       checked={true}
@@ -44,7 +50,8 @@ exports[`<Timeline /> should render default styles 1`] = `
         Array [
           Object {
             "color": "#707070",
-            "marginLeft": 10,
+            "fontSize": 16,
+            "fontWeight": "bold",
           },
         ]
       }
@@ -57,10 +64,12 @@ exports[`<Timeline /> should render default styles 1`] = `
       Array [
         Object {
           "flexDirection": "row",
-          "marginBottom": 10,
+          "justifyContent": "space-between",
+          "marginBottom": 5,
           "marginLeft": 0,
           "marginRight": 0,
-          "marginTop": 10,
+          "marginTop": 5,
+          "width": "100%",
         },
       ]
     }
@@ -71,20 +80,22 @@ exports[`<Timeline /> should render default styles 1`] = `
         Array [
           Object {
             "color": "#AEAEAE",
-            "marginLeft": 10,
+            "fontSize": 16,
+            "fontWeight": "normal",
           },
         ]
       }
     >
-      Saída:
+      SAÍDA:
     </Text>
     <Text
-      checked={true}
+      checked={false}
       style={
         Array [
           Object {
-            "color": "#707070",
-            "marginLeft": 10,
+            "color": "#AEAEAE",
+            "fontSize": 16,
+            "fontWeight": "normal",
           },
         ]
       }
@@ -97,10 +108,12 @@ exports[`<Timeline /> should render default styles 1`] = `
       Array [
         Object {
           "flexDirection": "row",
-          "marginBottom": 10,
+          "justifyContent": "space-between",
+          "marginBottom": 5,
           "marginLeft": 0,
           "marginRight": 0,
-          "marginTop": 10,
+          "marginTop": 5,
+          "width": "100%",
         },
       ]
     }
@@ -111,20 +124,22 @@ exports[`<Timeline /> should render default styles 1`] = `
         Array [
           Object {
             "color": "#AEAEAE",
-            "marginLeft": 10,
+            "fontSize": 16,
+            "fontWeight": "normal",
           },
         ]
       }
     >
-      Saída:
+      ENTRADA:
     </Text>
     <Text
-      checked={true}
+      checked={false}
       style={
         Array [
           Object {
-            "color": "#707070",
-            "marginLeft": 10,
+            "color": "#AEAEAE",
+            "fontSize": 16,
+            "fontWeight": "normal",
           },
         ]
       }
@@ -137,10 +152,12 @@ exports[`<Timeline /> should render default styles 1`] = `
       Array [
         Object {
           "flexDirection": "row",
-          "marginBottom": 10,
+          "justifyContent": "space-between",
+          "marginBottom": 5,
           "marginLeft": 0,
           "marginRight": 0,
-          "marginTop": 10,
+          "marginTop": 5,
+          "width": "100%",
         },
       ]
     }
@@ -151,20 +168,22 @@ exports[`<Timeline /> should render default styles 1`] = `
         Array [
           Object {
             "color": "#AEAEAE",
-            "marginLeft": 10,
+            "fontSize": 16,
+            "fontWeight": "normal",
           },
         ]
       }
     >
-      Saída:
+      SAÍDA:
     </Text>
     <Text
-      checked={true}
+      checked={false}
       style={
         Array [
           Object {
-            "color": "#707070",
-            "marginLeft": 10,
+            "color": "#AEAEAE",
+            "fontSize": 16,
+            "fontWeight": "normal",
           },
         ]
       }

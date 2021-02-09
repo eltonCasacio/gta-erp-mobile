@@ -6,7 +6,12 @@ export const Wrapper = styled.View`
   align-items: center;
 `;
 
-export const Text = styled.Text`
+export const TextTimer = styled.Text`
   color: ${Theme.Colors.white};
-  font-size: 40px;
+  font-size: 35px;
+`;
+
+export const TextDate = styled.Text`
+  color: ${Theme.Colors.white};
+  font-size: 20px;
 `;

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Wrapper, Text} from './styles';
+import {Wrapper, TextTimer, TextDate} from './styles';
 
 import {Weeks, Months} from '../../utils/weeksAndMonths';
 
@@ -46,8 +46,8 @@ const DataTime = () => {
 
   return (
     <Wrapper>
-      <Text>{hour}</Text>
-      <Text>{date}</Text>
+      <TextTimer>{hour}</TextTimer>
+      <TextDate>{date}</TextDate>
     </Wrapper>
   );
 };
