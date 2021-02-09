@@ -1,13 +1,29 @@
 import React from 'react';
 
-import * as S from './styles';
-import Label from '../../components/Label';
+import {Wrapper, TimelineContainer, Text, InfoDateTime} from './styles';
+
+import Timeline from '../../components/Timeline';
+import DateTime from '../../components/DataTime';
+import Button from '../../components/Button';
 
 const RegisterHours = () => {
   return (
-    <S.Container>
-      <Label title="RegisterHours" />
-    </S.Container>
+    <Wrapper>
+      <Text>Fulano</Text>
+
+      <TimelineContainer>
+        <Timeline />
+      </TimelineContainer>
+
+      <InfoDateTime>
+        <DateTime />
+      </InfoDateTime>
+
+      <Button
+        label="REGISTRAR"
+        callback={() => console.log('Registro de hora')}
+      />
+    </Wrapper>
   );
 };
 

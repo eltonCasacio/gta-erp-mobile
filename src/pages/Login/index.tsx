@@ -6,7 +6,7 @@ import Input from '../../components/Input';
 import Buttom from '../../components/Button';
 
 const Login = () => {
-  const teste = () => {
+  const exec = () => {
     console.log('teste');
   };
   return (
@@ -16,7 +16,7 @@ const Login = () => {
         <Input placeholder="usuário" />
         <Input placeholder="senha" />
       </InputContainer>
-      <Buttom children="entrar" callback={teste} />
+      <Buttom label="ENTRAR" callback={exec} />
     </Wrapper>
   );
 };

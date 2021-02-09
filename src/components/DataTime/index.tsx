@@ -7,7 +7,7 @@ const DataTime = () => {
   const [hour, setHour] = useState('');
   const [date, setDate] = useState('');
 
-  setInterval(() => {
+  const setTimer = async () => {
     let getHour = new Date().getHours();
     let getMinute = new Date().getMinutes();
 
@@ -20,14 +20,24 @@ const DataTime = () => {
         : String(getMinute);
 
     setHour(`${hourFormated}:${minutesFormated}`);
-  }, 10000);
+  };
 
-  useEffect(() => {
+  const setDateTime = async () => {
     let day = new Date().getDate();
     let week = Weeks[new Date().getDay()];
     let month = Months[new Date().getMonth()];
 
     setDate(`${week.slice(0, 3)} ${day}/${month.slice(0, 3)}`);
+  };
+
+  useEffect(() => {
+    setTimer();
+
+    setInterval(() => {
+      setTimer();
+    }, 6000);
+
+    setDateTime();
   }, []);
 
   return (

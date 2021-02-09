@@ -2,16 +2,16 @@ import React from 'react';
 import * as S from './styles';
 
 type ButtonProps = {
-  children: React.ReactNode;
+  label: String;
   callback: Function;
 };
 
-const Button = ({children = 'Button', callback}: ButtonProps) => {
+const Button = ({label = 'Button', callback}: ButtonProps) => {
   const callbackHandler = () => callback();
 
   return (
     <S.Wrapper onPress={callbackHandler}>
-      <S.Text>{children}</S.Text>
+      <S.Text>{label}</S.Text>
     </S.Wrapper>
   );
 };

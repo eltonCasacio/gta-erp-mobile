@@ -12,13 +12,13 @@ import * as S from './styles/principal';
 // import Routes from './routes';
 
 import Rodape from './components/Rodape';
-import Login from './pages/Login';
+import RegisterHours from './pages/RegisterHours';
 
 const App = () => {
   return (
     <S.Container>
       <S.Container>
-        <Login />
+        <RegisterHours />
       </S.Container>
       <Rodape />
     </S.Container>

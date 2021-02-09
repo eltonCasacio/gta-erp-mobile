@@ -10,10 +10,6 @@ exports[`<Login /> should render default layout 1`] = `
         "flexGrow": 1,
         "flexShrink": 1,
         "justifyContent": "space-between",
-        "paddingBottom": 15,
-        "paddingLeft": 15,
-        "paddingRight": 15,
-        "paddingTop": 15,
       },
     ]
   }
@@ -141,7 +137,7 @@ exports[`<Login /> should render default layout 1`] = `
         ]
       }
     >
-      entrar
+      ENTRAR
     </Text>
   </View>
 </View>
