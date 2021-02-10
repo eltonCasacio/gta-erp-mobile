@@ -5,20 +5,20 @@ type MenuItemsProps = {
   name: string;
   source: string;
 };
-const Menu = () => {
+
+type MenuProps = {
+  navigation: any;
+};
+const Menu = ({navigation}: MenuProps) => {
   const [menuItems] = useState([
-    {name: 'Indicar amigos', source: 'indicator'},
-    {name: 'Depositar', source: 'deposit'},
-    {name: 'Transferir', source: 'transfer'},
-    {name: 'Ajustar Limite', source: 'ajust'},
-    {name: 'Cartão virtual', source: 'card'},
-    {name: 'Pagar', source: 'payment'},
-    {name: 'Bloquear cartão', source: 'block'},
+    {name: 'Registrar Ponto', source: 'RegisterHours'},
+    {name: 'Download Holerite', source: 'PayslipDownload'},
+    {name: 'Relatório', source: 'Payroll'},
+    {name: 'Inf. Empresa', source: 'PersonalData'},
   ]);
 
-  const renderMenusItems = ({name}: MenuItemsProps) => (
-    <S.NavigatorBox key={`${name}`}>
-      {/* <Icon height={40} width={40} source={source} /> */}
+  const renderMenusItems = ({name, source}: MenuItemsProps) => (
+    <S.NavigatorBox onPress={() => navigation.navigate(source)} key={`${name}`}>
       <S.Title>{name}</S.Title>
     </S.NavigatorBox>
   );

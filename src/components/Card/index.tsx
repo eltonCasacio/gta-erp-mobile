@@ -2,8 +2,8 @@ import React from 'react';
 import {Wrapper, Text} from './styles';
 
 export type CardProps = {
-  leftComponent: React.ReactNode;
-  rigthComponent: React.ReactNode;
+  leftComponent: 'ADIANTAMENTO' | 'PAGAMENTO' | 'FÉRIAS';
+  rigthComponent: string;
 };
 
 const Card = ({leftComponent, rigthComponent}: CardProps) => {

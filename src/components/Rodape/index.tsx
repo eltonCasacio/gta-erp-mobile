@@ -3,10 +3,14 @@ import {Wrapper} from './styles';
 
 import Menu from '../Menu';
 
-const Rodape = () => {
+type RodapeProps = {
+  navigation: any;
+};
+
+const Rodape = ({navigation}: RodapeProps) => {
   return (
     <Wrapper>
-      <Menu />
+      <Menu navigation={navigation} />
     </Wrapper>
   );
 };

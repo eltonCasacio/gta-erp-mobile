@@ -5,7 +5,6 @@ export const Wrapper = styled.View`
   flex: 1;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: ${Theme.Spacings.great};
 `;
 
 export const Text = styled.Text`

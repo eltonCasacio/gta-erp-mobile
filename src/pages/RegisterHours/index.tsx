@@ -6,7 +6,12 @@ import Timeline from '../../components/Timeline';
 import DateTime from '../../components/DataTime';
 import Button from '../../components/Button';
 
-const RegisterHours = () => {
+import Rodape from '../../components/Rodape';
+
+type RegisterHoursProps = {
+  navigation: any;
+};
+const RegisterHours = ({navigation}: RegisterHoursProps) => {
   return (
     <Wrapper>
       <Text>Fulano</Text>
@@ -23,6 +28,8 @@ const RegisterHours = () => {
         label="REGISTRAR"
         callback={() => console.log('Registro de hora')}
       />
+
+      <Rodape navigation={navigation} />
     </Wrapper>
   );
 };

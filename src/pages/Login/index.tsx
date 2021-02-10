@@ -5,9 +5,9 @@ import Logo from '../../components/Logo';
 import Input from '../../components/Input';
 import Buttom from '../../components/Button';
 
-const Login = () => {
+const Login = ({navigation}: any) => {
   const exec = () => {
-    console.log('teste');
+    navigation.navigate('RegisterHours');
   };
   return (
     <Wrapper>

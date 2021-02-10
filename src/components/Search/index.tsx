@@ -5,7 +5,7 @@ import {StyleSheet, View} from 'react-native';
 import Theme from '../../styles/Theme';
 
 type YearsProps = {
-  years: number[];
+  years: string[];
 };
 
 const Search = ({years = []}: YearsProps) => {
@@ -32,12 +32,12 @@ const Search = ({years = []}: YearsProps) => {
 
 const styles = StyleSheet.create({
   pickerStyle: {
-    color: Theme.Colors.white
+    color: Theme.Colors.white,
   },
   line: {
     borderWidth: 0.3,
-    borderColor: Theme.Colors.white
-  }
+    borderColor: Theme.Colors.white,
+  },
 });
 
 export default Search;
