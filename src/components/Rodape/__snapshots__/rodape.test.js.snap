@@ -2,7 +2,6 @@
 
 exports[`<Rodape /> should render default layout 1`] = `
 <View
-  Dimension={[Function]}
   style={
     Array [
       Object {
@@ -16,198 +15,290 @@ exports[`<Rodape /> should render default layout 1`] = `
   <View
     style={
       Array [
-        Object {
-          "width": 80,
-        },
+        Object {},
       ]
     }
   >
-    <View
-      accessible={true}
-      focusable={false}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+    <RCTScrollView
+      horizontal={true}
+      showsHorizontalScrollIndicator={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#5762F2",
-          "height": "100%",
-          "justifyContent": "center",
-          "opacity": 1,
-          "paddingBottom": 5,
-          "paddingLeft": 5,
-          "paddingRight": 5,
-          "paddingTop": 5,
-          "width": "100%",
-        }
+        Array [
+          Object {
+            "height": 120,
+          },
+        ]
       }
     >
-      <Text
-        style={
-          Array [
+      <View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
             Object {
-              "color": "#fafafa",
-              "fontSize": 12,
-              "textAlign": "center",
-            },
-          ]
-        }
-      >
-        REGISTRAR HORÁRIO
-      </Text>
-    </View>
-  </View>
-  <View
-    style={
-      Array [
-        Object {
-          "width": 80,
-        },
-      ]
-    }
-  >
-    <View
-      accessible={true}
-      focusable={false}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#5762F2",
-          "height": "100%",
-          "justifyContent": "center",
-          "opacity": 1,
-          "paddingBottom": 5,
-          "paddingLeft": 5,
-          "paddingRight": 5,
-          "paddingTop": 5,
-          "width": "100%",
-        }
-      }
-    >
-      <Text
-        style={
-          Array [
+              "backgroundColor": "#5762F2",
+              "borderRadius": 5,
+              "height": 100,
+              "justifyContent": "space-between",
+              "marginRight": 10,
+              "opacity": 1,
+              "paddingBottom": 10,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 10,
+              "width": 90,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fafafa",
+                },
+              ]
+            }
+          >
+            Indicar amigos
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
             Object {
-              "color": "#fafafa",
-              "fontSize": 12,
-              "textAlign": "center",
-            },
-          ]
-        }
-      >
-        DOWNLOAD DE HOLERITE
-      </Text>
-    </View>
-  </View>
-  <View
-    style={
-      Array [
-        Object {
-          "width": 80,
-        },
-      ]
-    }
-  >
-    <View
-      accessible={true}
-      focusable={false}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#5762F2",
-          "height": "100%",
-          "justifyContent": "center",
-          "opacity": 1,
-          "paddingBottom": 5,
-          "paddingLeft": 5,
-          "paddingRight": 5,
-          "paddingTop": 5,
-          "width": "100%",
-        }
-      }
-    >
-      <Text
-        style={
-          Array [
+              "backgroundColor": "#5762F2",
+              "borderRadius": 5,
+              "height": 100,
+              "justifyContent": "space-between",
+              "marginRight": 10,
+              "opacity": 1,
+              "paddingBottom": 10,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 10,
+              "width": 90,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fafafa",
+                },
+              ]
+            }
+          >
+            Depositar
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
             Object {
-              "color": "#fafafa",
-              "fontSize": 12,
-              "textAlign": "center",
-            },
-          ]
-        }
-      >
-        RELATÓRIO DE MARCAÇÃO
-      </Text>
-    </View>
-  </View>
-  <View
-    style={
-      Array [
-        Object {
-          "width": 80,
-        },
-      ]
-    }
-  >
-    <View
-      accessible={true}
-      focusable={false}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#5762F2",
-          "height": "100%",
-          "justifyContent": "center",
-          "opacity": 1,
-          "paddingBottom": 5,
-          "paddingLeft": 5,
-          "paddingRight": 5,
-          "paddingTop": 5,
-          "width": "100%",
-        }
-      }
-    >
-      <Text
-        style={
-          Array [
+              "backgroundColor": "#5762F2",
+              "borderRadius": 5,
+              "height": 100,
+              "justifyContent": "space-between",
+              "marginRight": 10,
+              "opacity": 1,
+              "paddingBottom": 10,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 10,
+              "width": 90,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fafafa",
+                },
+              ]
+            }
+          >
+            Transferir
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
             Object {
-              "color": "#fafafa",
-              "fontSize": 12,
-              "textAlign": "center",
-            },
-          ]
-        }
-      >
-        INFORMAÇÕES DA EMPRESA
-      </Text>
-    </View>
+              "backgroundColor": "#5762F2",
+              "borderRadius": 5,
+              "height": 100,
+              "justifyContent": "space-between",
+              "marginRight": 10,
+              "opacity": 1,
+              "paddingBottom": 10,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 10,
+              "width": 90,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fafafa",
+                },
+              ]
+            }
+          >
+            Ajustar Limite
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#5762F2",
+              "borderRadius": 5,
+              "height": 100,
+              "justifyContent": "space-between",
+              "marginRight": 10,
+              "opacity": 1,
+              "paddingBottom": 10,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 10,
+              "width": 90,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fafafa",
+                },
+              ]
+            }
+          >
+            Cartão virtual
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#5762F2",
+              "borderRadius": 5,
+              "height": 100,
+              "justifyContent": "space-between",
+              "marginRight": 10,
+              "opacity": 1,
+              "paddingBottom": 10,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 10,
+              "width": 90,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fafafa",
+                },
+              ]
+            }
+          >
+            Pagar
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#5762F2",
+              "borderRadius": 5,
+              "height": 100,
+              "justifyContent": "space-between",
+              "marginRight": 10,
+              "opacity": 1,
+              "paddingBottom": 10,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 10,
+              "width": 90,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fafafa",
+                },
+              ]
+            }
+          >
+            Bloquear cartão
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
   </View>
 </View>
 `;

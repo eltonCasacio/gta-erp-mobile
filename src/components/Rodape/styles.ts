@@ -5,7 +5,3 @@ export const Wrapper = styled.View`
   justify-content: space-around;
   height: 100px;
 `;
-
-export const WrapperMenu = styled.View`
-  width: 80px;
-`;
