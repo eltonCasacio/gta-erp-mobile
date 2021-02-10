@@ -4,29 +4,28 @@ import {StyleSheet, View} from 'react-native';
 
 import Theme from '../../styles/Theme';
 
-type YearsProps = {
-  years: string[];
+type SearchProps = {
+  items: string[];
 };
 
-const Search = ({years = []}: YearsProps) => {
-  const [language, setLanguage] = useState('java');
+const Search = ({items = []}: SearchProps) => {
+  const [selecteditem, setSelecteditem] = useState('');
 
-  const pickers = years.map((year) => (
-    <Picker.Item key={year} label={String(year)} value={year} />
+  const pickers = items.map((item) => (
+    <Picker.Item key={item} label={String(item)} value={item} />
   ));
 
   return (
-    <>
+    <View style={styles.Wrapper}>
       <Picker
         dropdownIconColor={Theme.Colors.white}
-        selectedValue={language}
+        selectedValue={selecteditem}
         style={styles.pickerStyle}
-        onValueChange={(itemValue) => setLanguage(String(itemValue))}>
+        onValueChange={(itemValue) => setSelecteditem(String(itemValue))}>
         <Picker.Item label="Pesquisar" value={0} />
         {!!pickers && pickers}
       </Picker>
-      <View style={styles.line} />
-    </>
+    </View>
   );
 };
 
@@ -34,8 +33,8 @@ const styles = StyleSheet.create({
   pickerStyle: {
     color: Theme.Colors.white,
   },
-  line: {
-    borderWidth: 0.3,
+  Wrapper: {
+    borderBottomWidth: 1,
     borderColor: Theme.Colors.white,
   },
 });

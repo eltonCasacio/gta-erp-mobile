@@ -6,10 +6,8 @@ export const Wrapper = styled.View`
   justify-content: space-between;
 `;
 
-export const CardWrapper = styled.View`
-  margin: ${Theme.Spacings.great} 0;
+export const CardWrapper = styled.ScrollView`
+  margin: ${Theme.Spacings.medium} 0;
 `;
 
-export const SearchWrapper = styled.View`
-  margin-bottom: ${Theme.Spacings.medium};
-`;
+export const SearchWrapper = styled.View``;

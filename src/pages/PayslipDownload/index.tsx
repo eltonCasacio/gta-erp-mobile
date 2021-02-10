@@ -3,7 +3,7 @@ import React from 'react';
 import * as S from './styles';
 
 import Search from '../../components/Search';
-import Card from '../../components/Card';
+import Card from '../../components/PayslipeCard';
 import Rodape from '../../components/Rodape';
 
 type PayslipDownloadProps = {
@@ -16,12 +16,21 @@ const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
   return (
     <S.Wrapper>
       <S.SearchWrapper>
-        <Search years={years} />
+        <Search items={years} />
       </S.SearchWrapper>
 
       <S.CardWrapper>
         <Card leftComponent="ADIANTAMENTO" rigthComponent="3.200,00" />
         <Card leftComponent="FÉRIAS" rigthComponent="5.200,00" />
+        <Card leftComponent="PAGAMENTO" rigthComponent="7.200,00" />
+        <Card leftComponent="PAGAMENTO" rigthComponent="7.200,00" />
+        <Card leftComponent="PAGAMENTO" rigthComponent="7.200,00" />
+        <Card leftComponent="PAGAMENTO" rigthComponent="7.200,00" />
+        <Card leftComponent="PAGAMENTO" rigthComponent="7.200,00" />
+        <Card leftComponent="PAGAMENTO" rigthComponent="7.200,00" />
+        <Card leftComponent="PAGAMENTO" rigthComponent="7.200,00" />
+        <Card leftComponent="PAGAMENTO" rigthComponent="7.200,00" />
+        <Card leftComponent="PAGAMENTO" rigthComponent="7.200,00" />
         <Card leftComponent="PAGAMENTO" rigthComponent="7.200,00" />
       </S.CardWrapper>
 
