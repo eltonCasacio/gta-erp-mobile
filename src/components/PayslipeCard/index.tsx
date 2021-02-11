@@ -4,11 +4,12 @@ import {Wrapper, Text} from './styles';
 export type CardProps = {
   leftComponent: 'ADIANTAMENTO' | 'PAGAMENTO' | 'FÉRIAS';
   rigthComponent: string;
+  callback: Function;
 };
 
-const Card = ({leftComponent, rigthComponent}: CardProps) => {
+const Card = ({leftComponent, rigthComponent, callback}: CardProps) => {
   return (
-    <Wrapper>
+    <Wrapper onPress={() => callback()}>
       <Text>{leftComponent}</Text>
       <Text>{rigthComponent}</Text>
     </Wrapper>
