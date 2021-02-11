@@ -9,6 +9,7 @@ type MenuItemsProps = {
 type MenuProps = {
   navigation: any;
 };
+
 const Menu = ({navigation}: MenuProps) => {
   const [menuItems] = useState([
     {name: 'Registrar Ponto', source: 'RegisterHours'},

@@ -5,10 +5,15 @@ import Logo from '../../components/Logo';
 import Input from '../../components/Input';
 import Buttom from '../../components/Button';
 
+import {Auth} from '../../services/Login';
+
 const Login = ({navigation}: any) => {
   const exec = () => {
-    navigation.navigate('RegisterHours');
+    if (Auth()) {
+      navigation.navigate('RegisterHours');
+    }
   };
+
   return (
     <Wrapper>
       <Logo />
