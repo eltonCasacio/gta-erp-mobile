@@ -7,7 +7,7 @@ import {TouchableOpacity} from 'react-native';
 import Theme from '../../styles/Theme';
 
 export type ModalProps = {
-  children?: React.ReactNode;
+  children?: any;
   callback: Function;
 };
 
@@ -20,7 +20,8 @@ const Modal = ({children, callback}: ModalProps) => {
             <Icon name="times" size={30} color={Theme.Colors.grayBold} />
           </TouchableOpacity>
         </S.IconWrapper>
-        <S.Text>{children}</S.Text>
+
+        {!!children && children}
       </S.Content>
     </S.Wrapper>
   );

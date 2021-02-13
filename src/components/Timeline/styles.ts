@@ -11,10 +11,10 @@ export const Wrapper = styled.View`
 export type TextProps = {
   checked: boolean;
 };
+
 export const Text = styled.Text<TextProps>`
   ${({checked}) => css`
     color: ${checked ? Theme.Colors.grayBold : Theme.Colors.gray};
-    font-weight: ${checked ? 'bold' : 'normal'};
     font-size: ${Theme.Font.medium};
   `}
 `;

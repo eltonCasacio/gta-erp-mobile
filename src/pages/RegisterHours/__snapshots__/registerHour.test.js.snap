@@ -10,7 +10,6 @@ exports[`<RegisterHour should render default layout 1`] = `
         "flexGrow": 1,
         "flexShrink": 1,
         "justifyContent": "space-between",
-        "marginBottom": 15,
       },
     ]
   }
@@ -73,7 +72,6 @@ exports[`<RegisterHour should render default layout 1`] = `
               Object {
                 "color": "#707070",
                 "fontSize": 16,
-                "fontWeight": "bold",
               },
             ]
           }
@@ -87,7 +85,6 @@ exports[`<RegisterHour should render default layout 1`] = `
               Object {
                 "color": "#707070",
                 "fontSize": 16,
-                "fontWeight": "bold",
               },
             ]
           }
@@ -117,7 +114,6 @@ exports[`<RegisterHour should render default layout 1`] = `
               Object {
                 "color": "#AEAEAE",
                 "fontSize": 16,
-                "fontWeight": "normal",
               },
             ]
           }
@@ -131,7 +127,6 @@ exports[`<RegisterHour should render default layout 1`] = `
               Object {
                 "color": "#AEAEAE",
                 "fontSize": 16,
-                "fontWeight": "normal",
               },
             ]
           }
@@ -161,7 +156,6 @@ exports[`<RegisterHour should render default layout 1`] = `
               Object {
                 "color": "#AEAEAE",
                 "fontSize": 16,
-                "fontWeight": "normal",
               },
             ]
           }
@@ -175,7 +169,6 @@ exports[`<RegisterHour should render default layout 1`] = `
               Object {
                 "color": "#AEAEAE",
                 "fontSize": 16,
-                "fontWeight": "normal",
               },
             ]
           }
@@ -205,7 +198,6 @@ exports[`<RegisterHour should render default layout 1`] = `
               Object {
                 "color": "#AEAEAE",
                 "fontSize": 16,
-                "fontWeight": "normal",
               },
             ]
           }
@@ -219,7 +211,6 @@ exports[`<RegisterHour should render default layout 1`] = `
               Object {
                 "color": "#AEAEAE",
                 "fontSize": 16,
-                "fontWeight": "normal",
               },
             ]
           }
@@ -253,7 +244,7 @@ exports[`<RegisterHour should render default layout 1`] = `
           Array [
             Object {
               "color": "#fafafa",
-              "fontSize": 40,
+              "fontSize": 35,
             },
           ]
         }
@@ -265,7 +256,7 @@ exports[`<RegisterHour should render default layout 1`] = `
           Array [
             Object {
               "color": "#fafafa",
-              "fontSize": 40,
+              "fontSize": 20,
             },
           ]
         }
@@ -310,6 +301,214 @@ exports[`<RegisterHour should render default layout 1`] = `
     >
       REGISTRAR
     </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "height": 100,
+          "justifyContent": "space-around",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {},
+        ]
+      }
+    >
+      <RCTScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        style={
+          Array [
+            Object {},
+          ]
+        }
+      >
+        <View>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#5762F2",
+                "borderRadius": 5,
+                "height": 100,
+                "justifyContent": "center",
+                "marginBottom": 2,
+                "marginLeft": 2,
+                "marginRight": 2,
+                "marginTop": 2,
+                "opacity": 1,
+                "paddingBottom": 5,
+                "paddingLeft": 5,
+                "paddingRight": 5,
+                "paddingTop": 5,
+                "width": 85,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#fafafa",
+                    "fontSize": 16,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              Registrar Ponto
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#5762F2",
+                "borderRadius": 5,
+                "height": 100,
+                "justifyContent": "center",
+                "marginBottom": 2,
+                "marginLeft": 2,
+                "marginRight": 2,
+                "marginTop": 2,
+                "opacity": 1,
+                "paddingBottom": 5,
+                "paddingLeft": 5,
+                "paddingRight": 5,
+                "paddingTop": 5,
+                "width": 85,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#fafafa",
+                    "fontSize": 16,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              Download Holerite
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#5762F2",
+                "borderRadius": 5,
+                "height": 100,
+                "justifyContent": "center",
+                "marginBottom": 2,
+                "marginLeft": 2,
+                "marginRight": 2,
+                "marginTop": 2,
+                "opacity": 1,
+                "paddingBottom": 5,
+                "paddingLeft": 5,
+                "paddingRight": 5,
+                "paddingTop": 5,
+                "width": 85,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#fafafa",
+                    "fontSize": 16,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              Relatório
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#5762F2",
+                "borderRadius": 5,
+                "height": 100,
+                "justifyContent": "center",
+                "marginBottom": 2,
+                "marginLeft": 2,
+                "marginRight": 2,
+                "marginTop": 2,
+                "opacity": 1,
+                "paddingBottom": 5,
+                "paddingLeft": 5,
+                "paddingRight": 5,
+                "paddingTop": 5,
+                "width": 85,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#fafafa",
+                    "fontSize": 16,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              Inf. Empresa
+            </Text>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
   </View>
 </View>
 `;

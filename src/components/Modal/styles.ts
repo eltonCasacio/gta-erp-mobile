@@ -12,16 +12,10 @@ export const Wrapper = styled.View`
   background-color: rgba(0, 0, 0, 0.7);
 `;
 
-export const Content = styled.ScrollView`
-  width: 100%;
-  height: 100%;
+export const Content = styled.View`
+  flex: 1;
   padding: 10px;
   background-color: ${Theme.Colors.white};
-`;
-
-export const Text = styled.Text`
-  color: ${Theme.Colors.grayBold};
-  font-size: ${Theme.Font.great};
 `;
 
 export const IconWrapper = styled.View`

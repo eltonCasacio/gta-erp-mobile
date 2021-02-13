@@ -7,6 +7,7 @@ import Card from '../../components/PayrollCard';
 import Button from '../../components/Button';
 import Rodape from '../../components/Rodape';
 import Modal from '../../components/Modal';
+import ModalContent from '../../components/ModalPayrollContent';
 
 const items = ['1', '2', '3', '4', '5', '6'];
 
@@ -19,6 +20,10 @@ const Payroll = ({navigation}: Payroll) => {
 
   const handleDownload = () => {
     console.log('Download...');
+  };
+
+  const handleSave = async () => {
+    console.log('Salvando...');
   };
 
   const toggleModal = () => {
@@ -35,51 +40,6 @@ const Payroll = ({navigation}: Payroll) => {
           rigthComponent="xx:xx-xx:xx-xx:xx"
           callback={toggleModal}
         />
-        <Card
-          leftComponent="01/01/2020"
-          rigthComponent="xx:xx-xx:xx-xx:xx"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="01/01/2020"
-          rigthComponent="xx:xx-xx:xx-xx:xx"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="01/01/2020"
-          rigthComponent="xx:xx-xx:xx-xx:xx"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="01/01/2020"
-          rigthComponent="xx:xx-xx:xx-xx:xx"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="01/01/2020"
-          rigthComponent="xx:xx-xx:xx-xx:xx"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="01/01/2020"
-          rigthComponent="xx:xx-xx:xx-xx:xx"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="01/01/2020"
-          rigthComponent="xx:xx-xx:xx-xx:xx"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="01/01/2020"
-          rigthComponent="xx:xx-xx:xx-xx:xx"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="01/01/2020"
-          rigthComponent="xx:xx-xx:xx-xx:xx"
-          callback={toggleModal}
-        />
       </S.CardWrapper>
 
       <S.ButtonWrapper>
@@ -88,7 +48,23 @@ const Payroll = ({navigation}: Payroll) => {
 
       <Rodape navigation={navigation} />
 
-      {showModal && <Modal children="Payroll..." callback={toggleModal} />}
+      {showModal && (
+        <Modal
+          children={
+            <ModalContent
+              handleSave={handleSave}
+              payslipDate="01/01/2020"
+              payslip={{
+                startJob: '06:00',
+                break: '10:00',
+                restartJob: '12:00',
+                finishedJob: '18:00',
+              }}
+            />
+          }
+          callback={toggleModal}
+        />
+      )}
     </S.Wrapper>
   );
 };
