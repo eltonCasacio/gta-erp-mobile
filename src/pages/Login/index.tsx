@@ -5,12 +5,12 @@ import Logo from '../../components/Logo';
 import Input from '../../components/Input';
 import Buttom from '../../components/Button';
 
-import {Auth} from '../../services/Login';
+import {Auth} from '../../services/login';
 
 const Login = ({navigation}: any) => {
   const exec = () => {
     if (Auth()) {
-      navigation.navigate('RegisterHours');
+      // navigation.navigate('RegisterHours');
     }
   };
 
