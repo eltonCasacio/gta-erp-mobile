@@ -26,6 +26,7 @@
     "react-native-screens": "^2.16.1",
     "react-native-vector-icons": "^8.0.0",
     "react-navigation": "^4.4.3",
+    "realm": "^10.2.0",
     "styled-components": "^5.2.1",
     "styled-icons": "^10.27.0"
   },
