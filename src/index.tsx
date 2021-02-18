@@ -1,13 +1,20 @@
 import React from 'react';
-import {Wrapper} from './styles/principal';
+import * as S from './styles/principal';
+
+import {ApolloProvider} from '@apollo/client';
+import client from './graphql/client';
 
 import Routes from './routes';
 
 const App = () => {
   return (
-    <Wrapper>
-      <Routes />
-    </Wrapper>
+    <ApolloProvider client={client}>
+      <S.Wrapper>
+        <S.Container>
+          <Routes />
+        </S.Container>
+      </S.Wrapper>
+    </ApolloProvider>
   );
 };
 

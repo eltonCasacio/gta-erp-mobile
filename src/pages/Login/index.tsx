@@ -5,9 +5,9 @@ import Logo from '../../components/Logo';
 import Input from '../../components/Input';
 import Buttom from '../../components/Button';
 
-import {Auth} from '../../services/login';
+import {Auth} from '../../services/Login';
 
-const Login = ({navigation}: any) => {
+const Login = () => {
   const exec = () => {
     if (Auth()) {
       // navigation.navigate('RegisterHours');

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://api-gta.herokuapp.com/',
+  baseURL: 'https://gta-erp-api.herokuapp.com/',
 });
 
 export default instance;
