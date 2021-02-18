@@ -8,8 +8,8 @@ import Buttom from '../../components/Button';
 import {Auth} from '../../services/Login';
 
 const Login = () => {
-  const exec = () => {
-    if (Auth()) {
+  const exec = async () => {
+    if (await Auth()) {
       // navigation.navigate('RegisterHours');
     }
   };
