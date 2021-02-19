@@ -9,9 +9,9 @@ import {auth, getDataTest} from '../../services/Login';
 
 const Login = () => {
   const exec = async () => {
-    // auth()
+    await auth();
+    await getDataTest();
     // navigation.navigate('RegisterHours');
-    getDataTest();
   };
 
   return (
