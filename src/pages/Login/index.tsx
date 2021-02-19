@@ -5,13 +5,13 @@ import Logo from '../../components/Logo';
 import Input from '../../components/Input';
 import Buttom from '../../components/Button';
 
-import {Auth} from '../../services/Login';
+import {auth, getDataTest} from '../../services/Login';
 
 const Login = () => {
   const exec = async () => {
-    if (await Auth()) {
-      // navigation.navigate('RegisterHours');
-    }
+    // auth()
+    // navigation.navigate('RegisterHours');
+    getDataTest();
   };
 
   return (
