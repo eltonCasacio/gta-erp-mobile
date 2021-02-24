@@ -9,7 +9,7 @@ export const Wrapper = styled.View`
 
 export const Container = styled.View`
   flex: 1;
-  padding: ${Theme.Spacings.great};
+  padding: ${Theme.Spacings.small};
 `;
 
 export const RodapeWrapper = styled.View`

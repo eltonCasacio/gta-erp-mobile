@@ -11,10 +11,10 @@ type PayslipDownloadProps = {
   navigation: any;
 };
 
-const years = ['1', '2', '3', '4'];
 
 const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
   const [showModal, setShowModal] = useState(false);
+  const years = ['1', '2', '3', '4'];
 
   const toggleModal = () => {
     setShowModal(!showModal);
