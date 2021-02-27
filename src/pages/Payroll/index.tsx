@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import * as S from './styles';
 
@@ -8,6 +8,8 @@ import Button from '../../components/Button';
 import Rodape from '../../components/Rodape';
 import Modal from '../../components/Modal';
 import ModalContent from '../../components/ModalPayrollContent';
+
+import {getPayroll} from '../../services/payroll';
 
 const items = ['1', '2', '3', '4', '5', '6'];
 
@@ -29,6 +31,12 @@ const Payroll = ({navigation}: Payroll) => {
   const toggleModal = () => {
     setShowModal(!showModal);
   };
+
+  useEffect(() => {
+    getPayroll()
+      .then((hours) => console.log(hours))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <S.Wrapper>

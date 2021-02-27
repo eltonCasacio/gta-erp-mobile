@@ -1,13 +1,15 @@
 import {gql} from '@apollo/client';
 
 const GET_REGISTERHOURS = gql`
-  query GET_REGISTERHOURS {
-    registerHours {
+  query GET_PERSONAL_DATA {
+    employees(where: {email: "eltoncasacio@hotmail.com"}) {
       id
-      hour
-      employee {
+      Nome
+      apontamentos {
         id
-        name
+        entrada
+        saida
+        created_at
       }
     }
   }

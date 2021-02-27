@@ -10,7 +10,7 @@ import {auth} from '../../services/login';
 
 const Login = ({navigation}: any) => {
   const [user, setUser] = useState('eltoncasacio@hotmail.com');
-  const [password, setPassword] = useState('strapi@2');
+  const [password, setPassword] = useState('Strapi@2');
   const [hasError, setHasError] = useState(false);
 
   const handleSetUser = (text: string) => setUser(text);
@@ -19,7 +19,7 @@ const Login = ({navigation}: any) => {
   const login = async () => {
     try {
       await auth(user, password);
-      navigation.navigate('RegisterHours');
+      navigation.navigate('RegisterHours', {user});
     } catch (error) {
       setHasError(true);
       console.log('Erro ao tentar autenticar usuário', error);

@@ -6,6 +6,7 @@ export const getPayroll = async () => {
   try {
     const {data} = await client.query({query: GET_PAYROLL});
     console.log(data);
+    return data;
   } catch (error) {
     console.error(error);
   }

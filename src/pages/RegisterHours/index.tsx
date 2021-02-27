@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
 import {Wrapper, TimelineContainer, Text, InfoDateTime} from './styles';
 
@@ -10,11 +11,16 @@ import {getRegisterHours} from '../../services/registerHours';
 
 type RegisterHoursProps = {
   navigation: any;
+  route: any;
 };
 
-const RegisterHours = ({navigation}: RegisterHoursProps) => {
+const RegisterHours = ({navigation, route}: RegisterHoursProps) => {
+  const {user} = route.params;
+
   useEffect(() => {
-    getRegisterHours().then((hours) => console.log(hours));
+    getRegisterHours(user)
+      .then((hours) => console.log(hours))
+      .catch((err) => console.log(err));
   }, []);
 
   return (

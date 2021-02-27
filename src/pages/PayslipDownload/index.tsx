@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import * as S from './styles';
 
@@ -7,10 +7,11 @@ import Card from '../../components/PayslipeCard';
 import Rodape from '../../components/Rodape';
 import Modal from '../../components/Modal';
 
+import {getPayslipDownload} from '../../services/payslipDownload';
+
 type PayslipDownloadProps = {
   navigation: any;
 };
-
 
 const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
   const [showModal, setShowModal] = useState(false);
@@ -19,6 +20,12 @@ const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
   const toggleModal = () => {
     setShowModal(!showModal);
   };
+
+  useEffect(() => {
+    getPayslipDownload()
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <S.Wrapper>
