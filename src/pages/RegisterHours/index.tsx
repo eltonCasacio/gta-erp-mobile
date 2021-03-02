@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Wrapper, TimelineContainer, Text, InfoDateTime} from './styles';
 
 import Timeline from '../../components/Timeline';
@@ -9,26 +9,36 @@ import Rodape from '../../components/Rodape';
 
 import {getRegisterHours} from '../../services/registerHours';
 
-type RegisterHoursProps = {
+export type RegisterHoursProps = {
   navigation: any;
   route: any;
 };
 
 const RegisterHours = ({navigation, route}: RegisterHoursProps) => {
   const {user} = route.params;
+  const [name, setName] = useState('Bem Vindo!');
+  const [apontamentos, setApontamentos] = useState([]);
+
+  const handleGetRegisters = async () => {
+    try {
+      const data = await getRegisterHours(user, 4);
+      setApontamentos(data.apontamentos);
+      setName(data.apontamentos[0]?.funcionario?.Nome);
+    } catch (error) {
+      throw error;
+    }
+  };
 
   useEffect(() => {
-    getRegisterHours(user)
-      .then((hours) => console.log(hours))
-      .catch((err) => console.log(err));
+    handleGetRegisters();
   }, []);
 
   return (
     <Wrapper>
-      <Text>Fulano</Text>
+      <Text>{name}</Text>
 
       <TimelineContainer>
-        <Timeline />
+        <Timeline apontamentos={apontamentos} />
       </TimelineContainer>
 
       <InfoDateTime>

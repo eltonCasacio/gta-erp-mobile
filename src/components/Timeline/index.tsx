@@ -1,30 +1,20 @@
 import React from 'react';
 import * as S from './styles';
 
-const Timeline = () => {
-  return (
-    <S.Wrapper>
+const Timeline = ({apontamentos = []}) => {
+  const apontamentoEl = apontamentos.map((item) => {
+    let {registerDateHour, tipo} = item;
+    let dateFormated = new Date(registerDateHour).toLocaleDateString();
+    let hourFormated = new Date(registerDateHour).toLocaleTimeString();
+    return (
       <S.TextWrapper>
-        <S.Text checked>ENTRADA:</S.Text>
-        <S.Text checked>06:00</S.Text>
+        <S.Text checked>{tipo}</S.Text>
+        <S.Text checked>{`${dateFormated} - ${hourFormated}`}</S.Text>
       </S.TextWrapper>
+    );
+  });
 
-      <S.TextWrapper>
-        <S.Text checked={false}>SAÍDA:</S.Text>
-        <S.Text checked={false}>10:00</S.Text>
-      </S.TextWrapper>
-
-      <S.TextWrapper>
-        <S.Text checked={false}>ENTRADA:</S.Text>
-        <S.Text checked={false}>12:00</S.Text>
-      </S.TextWrapper>
-
-      <S.TextWrapper>
-        <S.Text checked={false}>SAÍDA:</S.Text>
-        <S.Text checked={false}>18:00</S.Text>
-      </S.TextWrapper>
-    </S.Wrapper>
-  );
+  return <S.Wrapper>{apontamentoEl}</S.Wrapper>;
 };
 
 export default Timeline;
