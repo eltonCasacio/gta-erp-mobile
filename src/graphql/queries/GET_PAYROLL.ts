@@ -1,14 +1,11 @@
 import {gql} from '@apollo/client';
 
 const GET_PAYROLL = gql`
-  query GET_PAYROLL {
-    employees(where: {email: "eltoncasacio@hotmail.com"}) {
-      apontamentos {
-        id
-        created_at
-        entrada
-        saida
-      }
+  query GET_PAYROLL($user: String!, $date: String!) {
+    apontamentos(
+      where: {funcionario: {email: $user}, registerDateHour_gte: $date}
+    ) {
+      registerDateHour
     }
   }
 `;

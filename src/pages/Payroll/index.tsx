@@ -20,6 +20,8 @@ type Payroll = {
 const Payroll = ({navigation}: Payroll) => {
   const [showModal, setShowModal] = useState(false);
 
+  const [apontamentos, setApontamentos] = useState([]);
+
   const handleDownload = () => {
     console.log('Download...');
   };
@@ -34,7 +36,7 @@ const Payroll = ({navigation}: Payroll) => {
 
   useEffect(() => {
     getPayroll()
-      .then((hours) => console.log(hours))
+      .then((dateTime) => setApontamentos(dateTime.apontamentos))
       .catch((err) => console.log(err));
   }, []);
 
@@ -43,11 +45,14 @@ const Payroll = ({navigation}: Payroll) => {
       <Search items={items} />
 
       <S.CardWrapper>
-        <Card
-          leftComponent="01/01/2020"
-          rigthComponent="xx:xx-xx:xx-xx:xx"
-          callback={toggleModal}
-        />
+        {apontamentos.map((apontamento, indice) => (
+          <Card
+            key={indice}
+            leftComponent={String(apontamento.registerDateHour).slice(0, 10)}
+            rigthComponent="xx:xx-xx:xx-xx:xx"
+            callback={toggleModal}
+          />
+        ))}
       </S.CardWrapper>
 
       <S.ButtonWrapper>

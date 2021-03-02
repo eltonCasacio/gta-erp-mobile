@@ -3,8 +3,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import AUTHORIZATION from '../graphql/queries/AUTHORIZATION';
 
 export const auth = async (user: string, password: string) => {
-  console.log('Autenticando...', user);
-
   await AsyncStorage.removeItem('token');
 
   try {
@@ -16,6 +14,7 @@ export const auth = async (user: string, password: string) => {
       },
     });
     AsyncStorage.setItem('token', data.login.jwt);
+    AsyncStorage.setItem('user', user);
 
     return data;
   } catch (error) {
