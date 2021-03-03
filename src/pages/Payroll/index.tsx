@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 
 import * as S from './styles';
@@ -9,18 +10,17 @@ import Rodape from '../../components/Rodape';
 import Modal from '../../components/Modal';
 import ModalContent from '../../components/ModalPayrollContent';
 
-import {getPayroll} from '../../services/payroll';
+import {getPayroll, removeDuplicate} from '../../services/payroll';
 
 const items = ['1', '2', '3', '4', '5', '6'];
 
-type Payroll = {
-  navigation: any;
-};
-
-const Payroll = ({navigation}: Payroll) => {
+const Payroll = ({navigation}: any) => {
   const [showModal, setShowModal] = useState(false);
+  const [dates, setDates] = useState(['']);
 
-  const [apontamentos, setApontamentos] = useState([]);
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
 
   const handleDownload = () => {
     console.log('Download...');
@@ -30,30 +30,28 @@ const Payroll = ({navigation}: Payroll) => {
     console.log('Salvando...');
   };
 
-  const toggleModal = () => {
-    setShowModal(!showModal);
+  const groupRegisters = async (registers = []) => {
+    let response = await removeDuplicate(registers);
+    setDates(response);
   };
 
   useEffect(() => {
     getPayroll()
-      .then((dateTime) => setApontamentos(dateTime.apontamentos))
+      .then((dateTime) => groupRegisters(dateTime.apontamentos))
       .catch((err) => console.log(err));
   }, []);
 
   return (
     <S.Wrapper>
       <Search items={items} />
-
-      <S.CardWrapper>
-        {apontamentos.map((apontamento, indice) => (
-          <Card
-            key={indice}
-            leftComponent={String(apontamento.registerDateHour).slice(0, 10)}
-            rigthComponent="xx:xx-xx:xx-xx:xx"
-            callback={toggleModal}
-          />
-        ))}
-      </S.CardWrapper>
+      {dates.map((date, indice) => (
+        <Card
+          key={indice}
+          leftComponent={String(date)}
+          callback={toggleModal}
+        />
+      ))}
+      <S.CardWrapper />
 
       <S.ButtonWrapper>
         <Button label="Download" callback={handleDownload} />

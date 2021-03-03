@@ -2,18 +2,11 @@ import client from '../graphql/client';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import GET_PAYROLL from '../graphql/queries/GET_PAYROLL';
 
+import {FormatDate} from '../utils/formatDate';
+
 export const getPayroll = async () => {
   const user = await AsyncStorage.getItem('user');
-  const fullDateTime = new Date();
-
-  let dia = String(fullDateTime.getDate());
-  dia = Number(dia) < 10 ? '0' + dia : dia;
-
-  let mes = String(fullDateTime.getMonth() + 1);
-  mes = Number(mes) < 10 ? '0' + mes : mes;
-
-  const ano = String(fullDateTime.getFullYear());
-  const date = ano.concat('-', mes, '-', dia);
+  const date = await FormatDate(new Date());
 
   try {
     const {data} = await client.query({
@@ -25,6 +18,23 @@ export const getPayroll = async () => {
     });
     return data;
   } catch (error) {
-    console.error(error);
+    throw error;
   }
+};
+
+export const removeDuplicate = async (registers = []) => {
+  const dates = registers.map(({registerDateHour}) =>
+    String(registerDateHour).slice(0, 7)
+  );
+
+  let newList = [''];
+  dates.forEach((current) => {
+    if (newList.indexOf(current) < 0) {
+      newList.push(current);
+    }
+  });
+
+  newList.shift();
+
+  return newList;
 };

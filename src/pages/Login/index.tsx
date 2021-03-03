@@ -19,6 +19,7 @@ const Login = ({navigation}: any) => {
   const login = async () => {
     try {
       await auth(user, password);
+      console.log('Autenticando...');
       navigation.navigate('RegisterHours', {user});
     } catch (error) {
       setHasError(true);

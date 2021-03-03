@@ -7,11 +7,10 @@ export type CardProps = {
   callback: Function;
 };
 
-const Card = ({leftComponent, rigthComponent, callback}: CardProps) => {
+const Card = ({leftComponent, callback}: CardProps) => {
   return (
     <S.Wrapper onPress={() => callback()}>
       <S.Text>{leftComponent}</S.Text>
-      <S.Text>{rigthComponent}</S.Text>
     </S.Wrapper>
   );
 };
