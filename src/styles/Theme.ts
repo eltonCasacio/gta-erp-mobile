@@ -9,12 +9,12 @@ const Theme = {
   Font: {
     small: '12px',
     medium: '16px',
-    great: '22px',
+    great: '20px',
   },
   Spacings: {
-    small: '5px',
+    small: '3px',
     medium: '10px',
-    great: '15px',
+    great: '20px',
   },
   BorderRadios: {
     small: '3px',

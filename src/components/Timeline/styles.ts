@@ -6,6 +6,7 @@ export const Wrapper = styled.View`
   align-items: center;
 
   padding: 0 ${Theme.Spacings.great};
+  min-height: 150px;
 `;
 
 export type TextProps = {
@@ -22,7 +23,7 @@ export const Text = styled.Text<TextProps>`
 export const TextWrapper = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  margin: ${Theme.Spacings.small} 0;
+  margin: ${Theme.Spacings.medium} 0;
 
   width: 100%;
 `;
