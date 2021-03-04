@@ -6,14 +6,14 @@ import {FormatDate} from '../utils/formatDate';
 
 export const getPayroll = async () => {
   const user = await AsyncStorage.getItem('user');
-  const date = await FormatDate(new Date());
+  const date = FormatDate(new Date());
 
   try {
     const {data} = await client.query({
       query: GET_PAYROLL,
       variables: {
         user,
-        date,
+        date: date.slice(0, 7),
       },
     });
     return data;
@@ -23,10 +23,7 @@ export const getPayroll = async () => {
 };
 
 export const removeDuplicate = async (registers = []) => {
-  const dates = registers.map(({registerDateHour}) =>
-    String(registerDateHour).slice(0, 7)
-  );
-
+  const dates = registers.map(({registerDate}) => registerDate);
   let newList = [''];
   dates.forEach((current) => {
     if (newList.indexOf(current) < 0) {
@@ -37,4 +34,24 @@ export const removeDuplicate = async (registers = []) => {
   newList.shift();
 
   return newList;
+};
+
+export const groupHours = (
+  dateRegister: string,
+  apontamentos = []
+): string[] => {
+  let hours = [''];
+
+  apontamentos.forEach(({registerDate, registerHour}) => {
+    const onlyDate = String(registerDate);
+    const currentDate = dateRegister;
+
+    if (onlyDate === currentDate) {
+      hours.push(registerHour);
+    }
+  });
+
+  hours.shift();
+
+  return hours;
 };

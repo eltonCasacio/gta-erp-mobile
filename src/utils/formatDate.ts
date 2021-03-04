@@ -7,4 +7,4 @@ export const FormatDate = (date = new Date()) => {
 
   const ano = String(date.getFullYear());
   return ano.concat('-', mes, '-', dia);
-}
+};

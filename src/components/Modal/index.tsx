@@ -14,7 +14,7 @@ export type ModalProps = {
 const Modal = ({children, callback}: ModalProps) => {
   return (
     <S.Wrapper>
-      <S.Content>
+      <>
         <S.IconWrapper>
           <TouchableOpacity onPress={() => callback()}>
             <Icon name="times" size={30} color={Theme.Colors.grayBold} />
@@ -22,7 +22,7 @@ const Modal = ({children, callback}: ModalProps) => {
         </S.IconWrapper>
 
         {!!children && children}
-      </S.Content>
+      </>
     </S.Wrapper>
   );
 };

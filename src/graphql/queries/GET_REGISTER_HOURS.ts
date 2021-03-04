@@ -7,7 +7,8 @@ const GET_REGISTERHOURS = gql`
       limit: $limit
       where: {funcionario: {email: $user}}
     ) {
-      registerDateHour
+      registerDate
+      registerHour
       tipo
       funcionario {
         Nome

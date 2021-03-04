@@ -10,15 +10,21 @@ import Rodape from '../../components/Rodape';
 import Modal from '../../components/Modal';
 import ModalContent from '../../components/ModalPayrollContent';
 
-import {getPayroll, removeDuplicate} from '../../services/payroll';
+import {getPayroll, removeDuplicate, groupHours} from '../../services/payroll';
 
 const items = ['1', '2', '3', '4', '5', '6'];
 
 const Payroll = ({navigation}: any) => {
   const [showModal, setShowModal] = useState(false);
-  const [dates, setDates] = useState(['']);
 
-  const toggleModal = () => {
+  const [apontamentos, setApontamentos] = useState([]);
+  const [dates, setDates] = useState(['']);
+  const [selectedRegister, setSelectedRegister] = useState(['']);
+
+  const setModal = (dateRegister = new Date().toString()) => {
+    let group = groupHours(dateRegister, apontamentos);
+    setSelectedRegister(group);
+
     setShowModal(!showModal);
   };
 
@@ -31,6 +37,7 @@ const Payroll = ({navigation}: any) => {
   };
 
   const groupRegisters = async (registers = []) => {
+    setApontamentos(registers);
     let response = await removeDuplicate(registers);
     setDates(response);
   };
@@ -45,11 +52,7 @@ const Payroll = ({navigation}: any) => {
     <S.Wrapper>
       <Search items={items} />
       {dates.map((date, indice) => (
-        <Card
-          key={indice}
-          leftComponent={String(date)}
-          callback={toggleModal}
-        />
+        <Card key={indice} leftComponent={String(date)} callback={setModal} />
       ))}
       <S.CardWrapper />
 
@@ -64,16 +67,10 @@ const Payroll = ({navigation}: any) => {
           children={
             <ModalContent
               handleSave={handleSave}
-              payslipDate="01/01/2020"
-              payslip={{
-                startJob: '06:00',
-                break: '10:00',
-                restartJob: '12:00',
-                finishedJob: '18:00',
-              }}
+              selectedRegister={selectedRegister}
             />
           }
-          callback={toggleModal}
+          callback={setModal}
         />
       )}
     </S.Wrapper>

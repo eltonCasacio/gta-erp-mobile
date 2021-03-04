@@ -24,6 +24,10 @@ const RegisterHours = ({navigation, route}: RegisterHoursProps) => {
       const data = await getRegisterHours(user, 4);
       setApontamentos(data.apontamentos);
       setName(data.apontamentos[0]?.funcionario?.Nome);
+      console.log(
+        'handleGetRegisters',
+        data.apontamentos[0]?.funcionario?.Nome
+      );
     } catch (error) {
       throw error;
     }

@@ -3,9 +3,10 @@ import {gql} from '@apollo/client';
 const GET_PAYROLL = gql`
   query GET_PAYROLL($user: String!, $date: String!) {
     apontamentos(
-      where: {funcionario: {email: $user}, registerDateHour_gte: $date}
+      where: {funcionario: {email: $user}, registerDate_gte: $date}
     ) {
-      registerDateHour
+      registerDate
+      registerHour
     }
   }
 `;

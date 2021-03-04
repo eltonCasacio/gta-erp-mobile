@@ -3,13 +3,12 @@ import * as S from './styles';
 
 const Timeline = ({apontamentos = []}) => {
   const apontamentoEl = apontamentos.map((item, indice) => {
-    let {registerDateHour, tipo} = item;
-    let dateFormated = new Date(registerDateHour).toLocaleDateString();
-    let hourFormated = new Date(registerDateHour).toLocaleTimeString();
+    const {registerDate, registerHour, tipo} = item;
+
     return (
       <S.TextWrapper key={indice}>
         <S.Text checked>{tipo}</S.Text>
-        <S.Text checked>{`${dateFormated} - ${hourFormated}`}</S.Text>
+        <S.Text checked>{`${registerDate}   -   ${registerHour}`}</S.Text>
       </S.TextWrapper>
     );
   });

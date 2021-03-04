@@ -5,87 +5,24 @@ import Button from '../Button';
 
 type ModalPayrollContentProps = {
   handleSave: Function;
-  payslipDate: string;
-  payslip: {
-    startJob: string;
-    break: string;
-    restartJob: string;
-    finishedJob: string;
-  };
+  selectedRegister: String[];
 };
 
 const ModalPayrollContent = ({
   handleSave,
-  payslipDate,
-  payslip,
+  selectedRegister,
 }: ModalPayrollContentProps) => {
+  console.log('selectedRegister', selectedRegister);
   return (
     <S.Wrapper>
-      <S.DateWrapper>{payslipDate}</S.DateWrapper>
+      {/* <S.DateWrapper>{selectedRegister[0]?.slice(0, 10)}</S.DateWrapper> */}
 
       <S.InputHourScrollView>
-        <S.InputHourGroup>
-          <S.InputHour placeholder={payslip.startJob} />
-          <S.InputHour placeholder={payslip.break} />
-          <S.InputHour placeholder={payslip.restartJob} />
-          <S.InputHour placeholder={payslip.finishedJob} />
-        </S.InputHourGroup>
-
-        <S.InputHourGroup>
-          <S.InputHour placeholder={payslip.startJob} />
-          <S.InputHour placeholder={payslip.break} />
-          <S.InputHour placeholder={payslip.restartJob} />
-          <S.InputHour placeholder={payslip.finishedJob} />
-        </S.InputHourGroup>
-
-        <S.InputHourGroup>
-          <S.InputHour placeholder={payslip.startJob} />
-          <S.InputHour placeholder={payslip.break} />
-          <S.InputHour placeholder={payslip.restartJob} />
-          <S.InputHour placeholder={payslip.finishedJob} />
-        </S.InputHourGroup>
-
-        <S.InputHourGroup>
-          <S.InputHour placeholder={payslip.startJob} />
-          <S.InputHour placeholder={payslip.break} />
-          <S.InputHour placeholder={payslip.restartJob} />
-          <S.InputHour placeholder={payslip.finishedJob} />
-        </S.InputHourGroup>
-
-        <S.InputHourGroup>
-          <S.InputHour placeholder={payslip.startJob} />
-          <S.InputHour placeholder={payslip.break} />
-          <S.InputHour placeholder={payslip.restartJob} />
-          <S.InputHour placeholder={payslip.finishedJob} />
-        </S.InputHourGroup>
-
-        <S.InputHourGroup>
-          <S.InputHour placeholder={payslip.startJob} />
-          <S.InputHour placeholder={payslip.break} />
-          <S.InputHour placeholder={payslip.restartJob} />
-          <S.InputHour placeholder={payslip.finishedJob} />
-        </S.InputHourGroup>
-
-        <S.InputHourGroup>
-          <S.InputHour placeholder={payslip.startJob} />
-          <S.InputHour placeholder={payslip.break} />
-          <S.InputHour placeholder={payslip.restartJob} />
-          <S.InputHour placeholder={payslip.finishedJob} />
-        </S.InputHourGroup>
-
-        <S.InputHourGroup>
-          <S.InputHour placeholder={payslip.startJob} />
-          <S.InputHour placeholder={payslip.break} />
-          <S.InputHour placeholder={payslip.restartJob} />
-          <S.InputHour placeholder={payslip.finishedJob} />
-        </S.InputHourGroup>
-
-        <S.InputHourGroup>
-          <S.InputHour placeholder={payslip.startJob} />
-          <S.InputHour placeholder={payslip.break} />
-          <S.InputHour placeholder={payslip.restartJob} />
-          <S.InputHour placeholder={payslip.finishedJob} />
-        </S.InputHourGroup>
+        {selectedRegister.map((register, indice) => (
+          <S.InputHourGroup key={indice}>
+            <S.InputHour placeholder={String(register)} />
+          </S.InputHourGroup>
+        ))}
       </S.InputHourScrollView>
 
       <Button label="SALVAR" callback={handleSave} />
