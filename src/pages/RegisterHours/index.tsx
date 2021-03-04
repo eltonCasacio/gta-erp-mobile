@@ -7,7 +7,7 @@ import DateTime from '../../components/DataTime';
 import Button from '../../components/Button';
 import Rodape from '../../components/Rodape';
 
-import {getRegisterHours} from '../../services/registerHours';
+import {getRegisterHours} from '../../controllers/registerHours';
 
 export type RegisterHoursProps = {
   navigation: any;

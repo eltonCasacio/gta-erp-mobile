@@ -1,6 +1,6 @@
-import client from '../graphql/client';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import GET_PAYROLL from '../graphql/queries/GET_PAYROLL';
+import {getWithQueryVariable} from '../services/queries';
 
 import {FormatDate} from '../utils/formatDate';
 
@@ -9,14 +9,13 @@ export const getPayroll = async () => {
   const date = FormatDate(new Date());
 
   try {
-    const {data} = await client.query({
+    return await getWithQueryVariable({
       query: GET_PAYROLL,
       variables: {
         user,
         date: date.slice(0, 7),
       },
     });
-    return data;
   } catch (error) {
     throw error;
   }

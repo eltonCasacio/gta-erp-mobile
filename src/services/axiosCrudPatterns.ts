@@ -1,4 +1,4 @@
-import api from './api';
+import api from './axiosAPI';
 
 const getAll = async (endPont: string) => {
   try {

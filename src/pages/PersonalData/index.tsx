@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import * as S from './styles';
 
 import Rodape from '../../components/Rodape';
-import {getPersonalData} from '../../services/personalData';
+import {getPersonalData} from '../../controllers/personalData';
 
 type PersonalDataProps = {
   navigation: any;

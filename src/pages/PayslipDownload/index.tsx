@@ -7,7 +7,7 @@ import Card from '../../components/PayslipeCard';
 import Rodape from '../../components/Rodape';
 import Modal from '../../components/Modal';
 
-import {getPayslipDownload} from '../../services/payslipDownload';
+import {getPayslipDownload} from '../../controllers/payslipDownload';
 
 type PayslipDownloadProps = {
   navigation: any;
