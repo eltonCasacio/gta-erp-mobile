@@ -8,8 +8,17 @@ type PersonalDataProps = {
   navigation: any;
 };
 
+type EmployeeProps = {
+  Nome: String;
+  id: String;
+  Admissao: String;
+  email: String;
+  Celular: String;
+  funcoe: String;
+};
+
 const PersonalData = ({navigation}: PersonalDataProps) => {
-  const [employee, setEmployee] = useState({});
+  const [employee, setEmployee] = useState<EmployeeProps>();
 
   useEffect(() => {
     getPersonalData()
@@ -23,32 +32,32 @@ const PersonalData = ({navigation}: PersonalDataProps) => {
         <S.Text>Informações do usuario</S.Text>
         <S.GroupInfo>
           <S.Label>Nome</S.Label>
-          <S.Text>{employee.Nome}</S.Text>
+          <S.Text>{employee ? employee.Nome : ''}</S.Text>
         </S.GroupInfo>
 
         <S.GroupInfo>
           <S.Label>RA</S.Label>
-          <S.Text>{employee.id}</S.Text>
+          <S.Text>{employee ? employee.id : ''}</S.Text>
         </S.GroupInfo>
 
         <S.GroupInfo>
           <S.Label>Admissão</S.Label>
-          <S.Text>{employee.Admissao}</S.Text>
+          <S.Text>{employee ? employee.Admissao : ''}</S.Text>
         </S.GroupInfo>
 
         <S.GroupInfo>
           <S.Label>E-mail</S.Label>
-          <S.Text>{employee.email}</S.Text>
+          <S.Text>{employee ? employee.email : ''}</S.Text>
         </S.GroupInfo>
 
         <S.GroupInfo>
           <S.Label>Contato</S.Label>
-          <S.Text>{employee.Celular}</S.Text>
+          <S.Text>{employee ? employee.Celular : ''}</S.Text>
         </S.GroupInfo>
 
         <S.GroupInfo>
           <S.Label>Cargo</S.Label>
-          <S.Text>{employee.funcoe}</S.Text>
+          <S.Text>{employee ? employee.funcoe : ''}</S.Text>
         </S.GroupInfo>
       </S.InfoWrapper>
       <Rodape navigation={navigation} />
