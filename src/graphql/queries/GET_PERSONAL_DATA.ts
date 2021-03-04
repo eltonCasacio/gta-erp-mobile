@@ -1,27 +1,16 @@
 import {gql} from '@apollo/client';
 
 const GET_PERSONAL_DATA = gql`
-  query GET_DATA_EMPLOYEE {
-    employees(where: {email: "eltoncasacio@hotmail.com"}) {
+  query GET_DATA_EMPLOYEE($email: String) {
+    employees(where: {email: $email}) {
       id
       Nome
-      Nascimento
       Admissao
-      RG
-      CPF
       Celular
       Telefone
       email
       funcoe {
         code
-      }
-      endereco {
-        Rua
-        Numero
-        Bairro
-        CEP
-        Cidade
-        UF
       }
     }
   }
