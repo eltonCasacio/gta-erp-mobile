@@ -15,6 +15,9 @@ type PayslipDownloadProps = {
 
 const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
   const [showModal, setShowModal] = useState(false);
+
+  const [payslipList, setPayslipsList] = useState([]);
+
   const years = ['1', '2', '3', '4'];
 
   const toggleModal = () => {
@@ -23,7 +26,7 @@ const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
 
   useEffect(() => {
     getPayslipDownload()
-      .then((data) => console.log(data))
+      .then(({payslips}) => setPayslipsList(payslips))
       .catch((err) => console.log(err));
   }, []);
 
@@ -34,66 +37,14 @@ const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
       </S.SearchWrapper>
 
       <S.CardWrapper>
-        <Card
-          leftComponent="ADIANTAMENTO"
-          rigthComponent="3.200,00"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="FÉRIAS"
-          rigthComponent="5.200,00"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="PAGAMENTO"
-          rigthComponent="7.200,00"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="PAGAMENTO"
-          rigthComponent="7.200,00"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="PAGAMENTO"
-          rigthComponent="7.200,00"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="PAGAMENTO"
-          rigthComponent="7.200,00"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="PAGAMENTO"
-          rigthComponent="7.200,00"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="PAGAMENTO"
-          rigthComponent="7.200,00"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="PAGAMENTO"
-          rigthComponent="7.200,00"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="PAGAMENTO"
-          rigthComponent="7.200,00"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="PAGAMENTO"
-          rigthComponent="7.200,00"
-          callback={toggleModal}
-        />
-        <Card
-          leftComponent="PAGAMENTO"
-          rigthComponent="7.200,00"
-          callback={toggleModal}
-        />
+        {payslipList.map(({paymentType, paymentDate}, indice) => (
+          <Card
+            key={indice}
+            leftComponent={paymentType}
+            rigthComponent={paymentDate}
+            callback={toggleModal}
+          />
+        ))}
       </S.CardWrapper>
 
       <Rodape navigation={navigation} />
