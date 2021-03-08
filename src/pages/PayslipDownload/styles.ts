@@ -11,3 +11,12 @@ export const CardWrapper = styled.ScrollView`
 `;
 
 export const SearchWrapper = styled.View``;
+
+export const PdfWrapper = styled.View`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  padding-bottom: 25px;
+  background-color: #fff;
+`;

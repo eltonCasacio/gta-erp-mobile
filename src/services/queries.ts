@@ -3,7 +3,6 @@ import {DocumentNode} from 'graphql';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const getByEmail = async (query: any) => {
-  console.log('GET_DATA BY EMAIL');
   const email = await AsyncStorage.getItem('user');
 
   try {
