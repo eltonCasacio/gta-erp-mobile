@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-// import {WebView} from 'react-native-webview';
+import {Linking, Alert} from 'react-native';
 import * as S from './styles';
 
 import Search from '../../components/Search';
@@ -7,24 +7,30 @@ import Card from '../../components/PayslipeCard';
 import Rodape from '../../components/Rodape';
 
 import {getPayslipDownload} from '../../controllers/payslipDownload';
-import {WebView} from 'react-native-webview';
 
 type PayslipDownloadProps = {
   navigation: any;
 };
 
-const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
-  const [showModal, setShowModal] = useState(false);
+type HoleriteProps = {
+  paymentType: any;
+  paymentDate: any;
+  holerite: any;
+};
 
+const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
   const [payslipList, setPayslipsList] = useState([]);
-  const [uriPayslip, setUriPayslip] = useState('');
 
   const years = ['1', '2', '3', '4'];
 
-  const toggleModal = (uri: string) => {
-    console.log(uri);
-    setUriPayslip(uri);
-    setShowModal(!showModal);
+  const handleDownload = async (url: string) => {
+    const supported = await Linking.canOpenURL(url);
+
+    if (supported) {
+      await Linking.openURL(url);
+    } else {
+      Alert.alert(`Don't know how to open this URL: ${url}`);
+    }
   };
 
   useEffect(() => {
@@ -40,23 +46,19 @@ const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
       </S.SearchWrapper>
 
       <S.CardWrapper>
-        {payslipList.map(({paymentType, paymentDate, holerite}, indice) => (
-          <Card
-            key={indice}
-            leftComponent={paymentType}
-            rigthComponent={paymentDate}
-            callback={() => toggleModal(holerite.url)}
-          />
-        ))}
+        {payslipList.map(
+          ({paymentType, paymentDate, holerite}: HoleriteProps, indice) => (
+            <Card
+              key={indice}
+              leftComponent={paymentType}
+              rigthComponent={paymentDate}
+              callback={() => handleDownload(holerite.url)}
+            />
+          )
+        )}
       </S.CardWrapper>
 
       <Rodape navigation={navigation} />
-
-      {showModal && (
-        <S.PdfWrapper>
-          <WebView source={{uri: uriPayslip}} />
-        </S.PdfWrapper>
-      )}
     </S.Wrapper>
   );
 };
