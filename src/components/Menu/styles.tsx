@@ -12,8 +12,8 @@ export const ViewNavigator = styled.View`
 export const NavigatorBox = styled.TouchableOpacity`
   background-color: ${Theme.Colors.secondary};
   height: 90px;
-  width: 80px;
-  margin: ${Theme.Spacings.small};
+  width: 85px;
+  margin-left: ${Theme.Spacings.small};
   padding: ${Theme.Spacings.small};
   border-radius: ${Theme.Spacings.small};
   justify-content: center;

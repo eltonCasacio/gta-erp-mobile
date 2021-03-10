@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-const GET_REGISTERHOURS = gql`
+export const GET_REGISTER_HOURS = gql`
   query GET_REGISTER_HOUR($user: String!, $limit: Int!) {
     apontamentos(
       sort: "registerDateHour:desc"
@@ -17,4 +17,32 @@ const GET_REGISTERHOURS = gql`
   }
 `;
 
-export default GET_REGISTERHOURS;
+export const CREATE_REGISTERHOURS = gql`
+  mutation CREATE_APONTAMENTO(
+    $tipo: ENUM_APONTAMENTO_TIPO!
+    $date: Date!
+    $hour: Time!
+    $ID: ID!
+  ) {
+    createApontamento(
+      input: {
+        data: {
+          tipo: $tipo
+          registerDate: $date
+          registerHour: $hour
+          funcionario: $ID
+        }
+      }
+    ) {
+      apontamento {
+        tipo
+        registerDate
+        registerHour
+        funcionario {
+          id
+          Nome
+        }
+      }
+    }
+  }
+`;

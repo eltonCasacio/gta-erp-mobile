@@ -1,13 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react';
-import {Wrapper, TimelineContainer, Text, InfoDateTime} from './styles';
+import {Wrapper, TimelineContainer, InfoDateTime} from './styles';
 
 import Timeline from '../../components/Timeline';
 import DateTime from '../../components/DataTime';
 import Button from '../../components/Button';
 import Rodape from '../../components/Rodape';
 
-import {getRegisterHours} from '../../controllers/registerHours';
+import {
+  getRegisterHours,
+  createRegisterHours,
+} from '../../controllers/registerHours';
 
 export type RegisterHoursProps = {
   navigation: any;
@@ -16,18 +19,21 @@ export type RegisterHoursProps = {
 
 const RegisterHours = ({navigation, route}: RegisterHoursProps) => {
   const {user} = route.params;
-  const [name, setName] = useState('Bem Vindo!');
   const [apontamentos, setApontamentos] = useState([]);
 
   const handleGetRegisters = async () => {
     try {
       const data = await getRegisterHours(user, 4);
       setApontamentos(data.apontamentos);
-      setName(data.apontamentos[0]?.funcionario?.Nome);
-      console.log(
-        'handleGetRegisters',
-        data.apontamentos[0]?.funcionario?.Nome
-      );
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const handleRegisterHour = async () => {
+    try {
+      const data = await createRegisterHours();
+      console.log('TESTE CREATE APONTAMENTO', data);
     } catch (error) {
       throw error;
     }
@@ -39,8 +45,6 @@ const RegisterHours = ({navigation, route}: RegisterHoursProps) => {
 
   return (
     <Wrapper>
-      <Text>{name}</Text>
-
       <TimelineContainer>
         <Timeline apontamentos={apontamentos} />
       </TimelineContainer>
@@ -49,10 +53,7 @@ const RegisterHours = ({navigation, route}: RegisterHoursProps) => {
         <DateTime />
       </InfoDateTime>
 
-      <Button
-        label="REGISTRAR"
-        callback={() => console.log('Registro de hora')}
-      />
+      <Button label="REGISTRAR" callback={() => handleRegisterHour()} />
 
       <Rodape navigation={navigation} />
     </Wrapper>
