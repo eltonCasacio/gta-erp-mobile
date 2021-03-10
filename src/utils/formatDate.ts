@@ -8,3 +8,7 @@ export const FormatDate = (date = new Date()) => {
   const ano = String(date.getFullYear());
   return ano.concat('-', mes, '-', dia);
 };
+
+export const FormatTime = () => {
+  return new Date().toLocaleTimeString();
+};

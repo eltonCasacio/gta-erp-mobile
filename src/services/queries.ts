@@ -9,6 +9,7 @@ type QueryProps = {
 
 type MutationProps = {
   mutation: DocumentNode;
+  variables: {};
 };
 
 export const getByEmail = async (query: any) => {
@@ -37,16 +38,14 @@ export const withQueryVariable = async ({query, variables}: QueryProps) => {
   }
 };
 
-export const withMutationVariable = async ({mutation}: MutationProps) => {
+export const withMutationVariable = async ({
+  mutation,
+  variables,
+}: MutationProps) => {
   try {
     const {data} = await client.mutate({
       mutation,
-      variables: {
-        tipo: 'ENTRADA',
-        date: '2021-03-24',
-        hour: '10:00:00.000',
-        ID: 16,
-      },
+      variables,
     });
     return data;
   } catch (error) {

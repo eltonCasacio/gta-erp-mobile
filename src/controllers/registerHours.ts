@@ -3,6 +3,12 @@ import {
   CREATE_REGISTERHOURS,
 } from '../graphql/queries/GET_REGISTER_HOURS';
 import {withQueryVariable, withMutationVariable} from '../services/queries';
+import {FormatDate, FormatTime} from '../utils/formatDate';
+
+enum TypeRegister {
+  'ENTRADA',
+  'SAIDA',
+}
 
 export const getRegisterHours = async (user: String, numberOfRegisters = 0) => {
   try {
@@ -19,9 +25,18 @@ export const getRegisterHours = async (user: String, numberOfRegisters = 0) => {
 };
 
 export const createRegisterHours = async () => {
+  const num = 1;
+  const ID = 16;
+
   try {
     return await withMutationVariable({
       mutation: CREATE_REGISTERHOURS,
+      variables: {
+        tipo: TypeRegister[num],
+        date: FormatDate(new Date()),
+        hour: FormatTime(),
+        ID,
+      },
     });
   } catch (error) {
     throw error;
