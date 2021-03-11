@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 
 import * as S from './styles';
@@ -10,7 +9,11 @@ import Rodape from '../../components/Rodape';
 import Modal from '../../components/Modal';
 import ModalContent from '../../components/ModalPayrollContent';
 
-import {getPayroll, removeDuplicate, groupHours} from '../../controllers/payroll';
+import {
+  getPayroll,
+  removeDuplicate,
+  groupHours,
+} from '../../controllers/payroll';
 
 const items = ['1', '2', '3', '4', '5', '6'];
 

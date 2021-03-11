@@ -26,7 +26,7 @@ export const getRegisterHours = async (user: String, numberOfRegisters = 0) => {
 
 export const createRegisterHours = async () => {
   const num = 1;
-  const ID = 16;
+  const ID = 17;
 
   try {
     return await withMutationVariable({

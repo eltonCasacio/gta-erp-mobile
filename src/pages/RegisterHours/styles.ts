@@ -13,8 +13,28 @@ export const Text = styled.Text`
   font-size: ${Theme.Font.great};
 `;
 
-export const TimelineContainer = styled.View`
+export const WrapperTimeline = styled.View`
   width: 100%;
+  background-color: ${Theme.Colors.secondary};
+  align-items: center;
+
+  padding: 0 ${Theme.Spacings.great};
+  margin-top: 15px;
+  min-height: 160px;
+  border-radius: ${Theme.BorderRadios.small};
+`;
+
+export const TextWrapper = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  margin: ${Theme.Spacings.medium} 0;
+
+  width: 100%;
+`;
+
+export const Card = styled.Text`
+  color: ${Theme.Colors.white};
+  font-size: ${Theme.Font.medium};
 `;
 
 export const InfoDateTime = styled.View`

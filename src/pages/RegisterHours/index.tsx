@@ -1,8 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react';
-import {Wrapper, TimelineContainer, InfoDateTime} from './styles';
+import * as S from './styles';
 
-import Timeline from '../../components/Timeline';
 import DateTime from '../../components/DataTime';
 import Button from '../../components/Button';
 import Rodape from '../../components/Rodape';
@@ -30,10 +29,11 @@ const RegisterHours = ({navigation, route}: RegisterHoursProps) => {
     }
   };
 
-  const handleRegisterHour = async () => {
+  const handleCreateRegister = async () => {
     try {
       const data = await createRegisterHours();
-      console.log('TESTE CREATE APONTAMENTO', data);
+      const {apontamento} = data.createApontamento;
+      setApontamentos([...apontamentos, apontamento]);
     } catch (error) {
       throw error;
     }
@@ -44,19 +44,24 @@ const RegisterHours = ({navigation, route}: RegisterHoursProps) => {
   }, []);
 
   return (
-    <Wrapper>
-      <TimelineContainer>
-        <Timeline apontamentos={apontamentos} />
-      </TimelineContainer>
+    <S.Wrapper>
+      <S.WrapperTimeline>
+        {apontamentos.map(({registerDate, registerHour, tipo}, indice) => (
+          <S.TextWrapper key={indice}>
+            <S.Card>{tipo}</S.Card>
+            <S.Card>{`${registerDate}   -   ${registerHour}`}</S.Card>
+          </S.TextWrapper>
+        ))}
+      </S.WrapperTimeline>
 
-      <InfoDateTime>
+      <S.InfoDateTime>
         <DateTime />
-      </InfoDateTime>
+      </S.InfoDateTime>
 
-      <Button label="REGISTRAR" callback={() => handleRegisterHour()} />
+      <Button label="REGISTRAR" callback={() => handleCreateRegister()} />
 
       <Rodape navigation={navigation} />
-    </Wrapper>
+    </S.Wrapper>
   );
 };
 

@@ -29,7 +29,6 @@ const PersonalData = ({navigation}: PersonalDataProps) => {
   return (
     <S.Wrapper>
       <S.InfoWrapper>
-        <S.Text>Informações do usuario</S.Text>
         <S.GroupInfo>
           <S.Label>Nome</S.Label>
           <S.Text>{employee ? employee.Nome : ''}</S.Text>
@@ -37,7 +36,9 @@ const PersonalData = ({navigation}: PersonalDataProps) => {
 
         <S.GroupInfo>
           <S.Label>RA</S.Label>
-          <S.Text>{employee ? employee.id : ''}</S.Text>
+          <S.Text>
+            {employee ? `${employee.id}${employee.Admissao}${employee.id}` : ''}
+          </S.Text>
         </S.GroupInfo>
 
         <S.GroupInfo>
