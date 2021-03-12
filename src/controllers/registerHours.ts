@@ -2,43 +2,27 @@ import {
   GET_REGISTER_HOURS,
   CREATE_REGISTERHOURS,
 } from '../graphql/queries/GET_REGISTER_HOURS';
-import {withQueryVariable, withMutationVariable} from '../services/queries';
-import {FormatDate, FormatTime} from '../utils/formatDate';
-
-enum TypeRegister {
-  'ENTRADA',
-  'SAIDA',
-}
+import {
+  getRegisterHourService,
+  createRegisterHoursService,
+} from '../services/registerHour';
 
 export const getRegisterHours = async (user: String, numberOfRegisters = 0) => {
   try {
-    return await withQueryVariable({
+    return await getRegisterHourService({
+      user,
+      numberOfRegisters,
       query: GET_REGISTER_HOURS,
-      variables: {
-        user,
-        limit: numberOfRegisters,
-      },
     });
   } catch (error) {
-    throw error;
+    throw 'ERRO AO PEGAR APONTAMENTOS:::' + error;
   }
 };
 
-export const createRegisterHours = async () => {
-  const num = 1;
-  const ID = 17;
-
+export const createRegisterHours = async (apontamentos = []) => {
   try {
-    return await withMutationVariable({
-      mutation: CREATE_REGISTERHOURS,
-      variables: {
-        tipo: TypeRegister[num],
-        date: FormatDate(new Date()),
-        hour: FormatTime(),
-        ID,
-      },
-    });
+    return await createRegisterHoursService(apontamentos, CREATE_REGISTERHOURS);
   } catch (error) {
-    throw error;
+    throw 'ERRO AO CRIAR APONTAMENTO:::' + error;
   }
 };

@@ -7,15 +7,9 @@ export const Wrapper = styled.View`
   align-items: center;
 `;
 
-export const Text = styled.Text`
-  align-self: flex-start;
-  color: ${Theme.Colors.white};
-  font-size: ${Theme.Font.great};
-`;
-
 export const WrapperTimeline = styled.View`
   width: 100%;
-  background-color: ${Theme.Colors.secondary};
+  background-color: ${Theme.Colors.white};
   align-items: center;
 
   padding: 0 ${Theme.Spacings.great};
@@ -33,7 +27,7 @@ export const TextWrapper = styled.View`
 `;
 
 export const Card = styled.Text`
-  color: ${Theme.Colors.white};
+  color: ${Theme.Colors.primary};
   font-size: ${Theme.Font.medium};
 `;
 

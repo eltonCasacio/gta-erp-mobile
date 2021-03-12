@@ -5,6 +5,7 @@ export const Wrapper = styled.View`
   justify-content: space-between;
   align-items: center;
   flex: 1;
+  padding: 15px;
 `;
 
 export const InputContainer = styled.View`

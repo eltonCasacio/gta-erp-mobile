@@ -25,17 +25,16 @@ const RegisterHours = ({navigation, route}: RegisterHoursProps) => {
       const data = await getRegisterHours(user, 4);
       setApontamentos(data.apontamentos);
     } catch (error) {
-      throw error;
+      console.error(error);
     }
   };
 
   const handleCreateRegister = async () => {
     try {
-      const data = await createRegisterHours();
-      const {apontamento} = data.createApontamento;
-      setApontamentos([...apontamentos, apontamento]);
+      const newList = await createRegisterHours(apontamentos);
+      setApontamentos(newList);
     } catch (error) {
-      throw error;
+      console.error(error);
     }
   };
 
@@ -46,7 +45,7 @@ const RegisterHours = ({navigation, route}: RegisterHoursProps) => {
   return (
     <S.Wrapper>
       <S.WrapperTimeline>
-        {apontamentos.map(({registerDate, registerHour, tipo}, indice) => (
+        {apontamentos.map(({registerDate, registerHour, tipo}: any, indice) => (
           <S.TextWrapper key={indice}>
             <S.Card>{tipo}</S.Card>
             <S.Card>{`${registerDate}   -   ${registerHour}`}</S.Card>
