@@ -17,7 +17,7 @@ export const getPayroll = async () => {
       },
     });
   } catch (error) {
-    throw error;
+    throw `ERRO AO PEGAR APONTAMENTOS - RELATÓRIO${error}`;
   }
 };
 

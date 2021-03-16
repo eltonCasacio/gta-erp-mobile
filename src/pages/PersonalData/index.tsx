@@ -14,7 +14,9 @@ type EmployeeProps = {
   Admissao: String;
   email: String;
   Celular: String;
-  funcoe: String;
+  funcoe: {
+    code: string;
+  };
 };
 
 const PersonalData = ({navigation}: PersonalDataProps) => {
@@ -58,7 +60,7 @@ const PersonalData = ({navigation}: PersonalDataProps) => {
 
         <S.GroupInfo>
           <S.Label>Cargo</S.Label>
-          <S.Text>{employee ? employee.funcoe : ''}</S.Text>
+          <S.Text>{employee ? employee.funcoe.code : ''}</S.Text>
         </S.GroupInfo>
       </S.InfoWrapper>
       <Rodape navigation={navigation} />

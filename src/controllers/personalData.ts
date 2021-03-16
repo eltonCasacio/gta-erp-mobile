@@ -5,6 +5,6 @@ export const getPersonalData = async () => {
   try {
     return await getByEmail(GET_PERSONAL_DATA);
   } catch (error) {
-    throw error;
+    throw `ERRO AO PEGAR DADOS DO FUNCIONARIO${error}`;
   }
 };

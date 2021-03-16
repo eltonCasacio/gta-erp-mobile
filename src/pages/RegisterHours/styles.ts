@@ -12,7 +12,7 @@ export const WrapperTimeline = styled.View`
   background-color: ${Theme.Colors.white};
   align-items: center;
 
-  padding: 0 ${Theme.Spacings.great};
+  padding: ${Theme.Spacings.medium} ${Theme.Spacings.great};
   margin-top: 15px;
   min-height: 160px;
   border-radius: ${Theme.BorderRadios.small};
@@ -27,10 +27,10 @@ export const TextWrapper = styled.View`
 `;
 
 export const Card = styled.Text`
-  color: ${Theme.Colors.primary};
+  color: ${Theme.Colors.grayBold};
   font-size: ${Theme.Font.medium};
 `;
 
 export const InfoDateTime = styled.View`
-  margin-bottom: ${Theme.Spacings.great};
+  margin-bottom: ${Theme.Spacings.medium};
 `;

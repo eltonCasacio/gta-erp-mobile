@@ -2,7 +2,7 @@ const Theme = {
   Colors: {
     primary: '#070E70',
     secondary: '#5762F2',
-    white: '#fafafa',
+    white: '#d0d0d0',
     gray: '#AEAEAE',
     grayBold: '#707070',
   },
@@ -13,7 +13,7 @@ const Theme = {
   },
   Spacings: {
     small: '3px',
-    medium: '10px',
+    medium: '12px',
     great: '20px',
   },
   BorderRadios: {

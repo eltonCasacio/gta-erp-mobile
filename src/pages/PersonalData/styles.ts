@@ -9,21 +9,26 @@ export const Wrapper = styled.View`
 export const InfoWrapper = styled.View`
   flex: 1;
   margin: ${Theme.Spacings.medium} 0;
-  padding: ${Theme.Spacings.medium};
+  padding: ${Theme.Spacings.great};
   background-color: ${Theme.Colors.white};
+  border-radius: ${Theme.Spacings.medium};
 `;
 
 export const Text = styled.Text`
+  width: 100%;
   color: ${Theme.Colors.grayBold};
-  font-size: ${Theme.Font.great};
+  font-size: ${Theme.Font.medium};
+  text-align: left;
 `;
 
 export const Label = styled.Text`
+  min-width: 100px;
   color: ${Theme.Colors.secondary};
   font-size: ${Theme.Font.great};
 `;
 
 export const GroupInfo = styled.View`
+  flex-direction: row;
   justify-content: space-between;
-  margin: 7px 0;
+  margin: 12px 0;
 `;

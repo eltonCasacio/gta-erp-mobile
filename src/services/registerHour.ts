@@ -1,5 +1,6 @@
 import {withQueryVariable, withMutationVariable} from './queries';
 import {FormatDate, FormatTime} from '../utils/formatDate';
+import {DocumentNode} from 'graphql';
 
 enum TypeRegister {
   'ENTRADA',
@@ -24,7 +25,10 @@ export const getRegisterHourService = async ({
   }
 };
 
-export const createRegisterHoursService = async (apontamentos = [], query) => {
+export const createRegisterHoursService = async (
+  apontamentos = [],
+  query: DocumentNode
+) => {
   try {
     const data = await withMutationVariable({
       mutation: query,
@@ -41,8 +45,8 @@ export const createRegisterHoursService = async (apontamentos = [], query) => {
   }
 };
 
-const saveOnLocalDatabase = (apontamentos, typeDateHour = {}) => {
-  console.log('SALVANDO BD LOCAL::', typeDateHour);
+const saveOnLocalDatabase = (apontamentos = [], typeDateHour = {}) => {
+  console.log('SALVANDO BD LOCAL::', typeDateHour, apontamentos);
 };
 
 const generateTypeDateHour = (id: Number) => {

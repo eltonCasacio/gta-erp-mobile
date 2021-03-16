@@ -1,12 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Linking, Alert} from 'react-native';
-import * as S from './styles';
+
+import {useQuery} from '@apollo/client';
+import GET_PAYSLIP_DOWNLOAD from '../../graphql/queries/GET_PAYSLIP_DOWNLOAD';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Search from '../../components/Search';
 import Card from '../../components/PayslipeCard';
 import Rodape from '../../components/Rodape';
 
-import {getPayslipDownload} from '../../controllers/payslipDownload';
+import * as S from './styles';
 
 type PayslipDownloadProps = {
   navigation: any;
@@ -19,9 +22,13 @@ type HoleriteProps = {
 };
 
 const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
-  const [payslipList, setPayslipsList] = useState([]);
-
+  const [email, setEmail] = useState('');
   const years = ['1', '2', '3', '4'];
+
+  const {data} = useQuery(GET_PAYSLIP_DOWNLOAD, {
+    variables: {email},
+    pollInterval: 2000,
+  });
 
   const handleDownload = async (url: string) => {
     const supported = await Linking.canOpenURL(url);
@@ -33,10 +40,13 @@ const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
     }
   };
 
+  const getEmail = async () => {
+    const res = await AsyncStorage.getItem('user');
+    setEmail(String(res));
+  };
+
   useEffect(() => {
-    getPayslipDownload()
-      .then(({payslips}) => setPayslipsList(payslips))
-      .catch((err) => console.log(err));
+    getEmail();
   }, []);
 
   return (
@@ -46,16 +56,20 @@ const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
       </S.SearchWrapper>
 
       <S.CardWrapper>
-        {payslipList.map(
-          ({paymentType, paymentDate, holerite}: HoleriteProps, indice) => (
-            <Card
-              key={indice}
-              leftComponent={paymentType}
-              rigthComponent={paymentDate}
-              callback={() => handleDownload(holerite.url)}
-            />
-          )
-        )}
+        {data?.payslips &&
+          data.payslips.map(
+            (
+              {paymentType, paymentDate, holerite}: HoleriteProps,
+              indice: number
+            ) => (
+              <Card
+                key={indice}
+                leftComponent={paymentType}
+                rigthComponent={paymentDate}
+                callback={() => handleDownload(holerite.url)}
+              />
+            )
+          )}
       </S.CardWrapper>
 
       <Rodape navigation={navigation} />
