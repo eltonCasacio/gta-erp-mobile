@@ -36,10 +36,8 @@ export const createRegisterHoursService = async (
     });
 
     const {apontamento} = data.createApontamento;
-    const removedFirstItem =
-      apontamentos.length >= 4 ? [...apontamentos].slice(1) : apontamentos;
 
-    return [...removedFirstItem, apontamento];
+    return apontamento;
   } catch (error) {
     saveOnLocalDatabase(apontamentos, generateTypeDateHour(17));
   }

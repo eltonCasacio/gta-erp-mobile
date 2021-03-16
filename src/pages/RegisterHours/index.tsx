@@ -2,45 +2,57 @@
 import React, {useEffect, useState} from 'react';
 import * as S from './styles';
 
+import {useQuery} from '@apollo/client';
+import {GET_REGISTER_HOURS} from '../../graphql/queries/GET_REGISTER_HOURS';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import DateTime from '../../components/DataTime';
 import Button from '../../components/Button';
 import Rodape from '../../components/Rodape';
 
-import {
-  getRegisterHours,
-  createRegisterHours,
-} from '../../controllers/registerHours';
+import {createRegisterHours} from '../../controllers/registerHours';
 
 export type RegisterHoursProps = {
   navigation: any;
   route: any;
 };
 
-const RegisterHours = ({navigation, route}: RegisterHoursProps) => {
-  const {user} = route.params;
+const RegisterHours = ({navigation}: RegisterHoursProps) => {
+  const [user, setUser] = useState('');
   const [apontamentos, setApontamentos] = useState([]);
 
-  const handleGetRegisters = async () => {
+  const {data} = useQuery(GET_REGISTER_HOURS, {
+    variables: {
+      user,
+      limit: 4,
+    },
+    pollInterval: 500,
+  });
+
+  const handleCreateRegister = async () => {
     try {
-      const data = await getRegisterHours(user, 4);
-      setApontamentos(data.apontamentos);
+      const newApontamento = await createRegisterHours(apontamentos);
+
+      const removedFirstItem =
+        apontamentos.length >= 4 ? [...apontamentos].slice(1) : apontamentos;
+
+      setApontamentos([...removedFirstItem, newApontamento]);
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleCreateRegister = async () => {
-    try {
-      const newList = await createRegisterHours(apontamentos);
-      setApontamentos(newList);
-    } catch (error) {
-      console.error(error);
+  const getUser = async () => {
+    const res = await AsyncStorage.getItem('user');
+    setUser(String(res));
+    if (data) {
+      setApontamentos(data.apontamentos);
     }
   };
 
   useEffect(() => {
-    handleGetRegisters();
-  }, []);
+    getUser();
+  }, [data]);
 
   return (
     <S.Wrapper>
