@@ -41,12 +41,14 @@ export const groupHours = (
 ): string[] => {
   let hours = [''];
 
-  apontamentos.forEach(({registerDate, registerHour}) => {
+  console.log('GROUP HOURS', apontamentos);
+
+  apontamentos.forEach(({registerDate, registerHour, tipo}) => {
     const onlyDate = String(registerDate);
     const currentDate = dateRegister;
 
     if (onlyDate === currentDate) {
-      hours.push(registerHour);
+      hours.push(`${tipo}-${registerHour}`);
     }
   });
 

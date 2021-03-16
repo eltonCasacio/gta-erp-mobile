@@ -17,14 +17,15 @@ export const InputHourScrollView = styled.ScrollView`
 `;
 
 export const InputHourGroup = styled.View`
+  width: 81%;
   flex-direction: row;
+  justify-content: space-between;
+  border-bottom-width: 1px;
+  margin-bottom: ${Theme.Spacings.great};
 `;
 
-export const InputHour = styled.TextInput`
-  font-size: ${Theme.Font.great};
-  padding: 3px ${Theme.Spacings.small};
-  margin: 5px 2px;
-  border-width: 1px;
+export const Text = styled.Text`
+  font-size: ${Theme.Font.medium};
   color: ${Theme.Colors.primary};
 `;
 

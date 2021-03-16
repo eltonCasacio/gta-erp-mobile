@@ -7,6 +7,7 @@ const GET_PAYROLL = gql`
     ) {
       registerDate
       registerHour
+      tipo
     }
   }
 `;

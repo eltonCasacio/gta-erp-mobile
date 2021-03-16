@@ -12,15 +12,13 @@ const ModalPayrollContent = ({
   handleSave,
   selectedRegister,
 }: ModalPayrollContentProps) => {
-  console.log('selectedRegister', selectedRegister);
   return (
     <S.Wrapper>
-      {/* <S.DateWrapper>{selectedRegister[0]?.slice(0, 10)}</S.DateWrapper> */}
-
       <S.InputHourScrollView>
         {selectedRegister.map((register, indice) => (
           <S.InputHourGroup key={indice}>
-            <S.InputHour placeholder={String(register)} />
+            <S.Text>{String(register.split('-')[0])}</S.Text>
+            <S.Text>{String(register.split('-')[1])}</S.Text>
           </S.InputHourGroup>
         ))}
       </S.InputHourScrollView>

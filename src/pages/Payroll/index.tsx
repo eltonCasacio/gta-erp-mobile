@@ -29,9 +29,6 @@ const Payroll = ({navigation}: any) => {
   const setModal = (dateRegister = new Date().toString()) => {
     let group = groupHours(dateRegister, apontamentos);
     setSelectedRegister(group);
-
-    console.log('TESTEEE SET MODAL', dateRegister, group);
-
     setShowModal(!showModal);
   };
 

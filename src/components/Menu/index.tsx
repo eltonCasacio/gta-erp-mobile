@@ -15,7 +15,7 @@ const Menu = ({navigation}: MenuProps) => {
     {name: 'Registrar Ponto', source: 'RegisterHours'},
     {name: 'Download Holerite', source: 'PayslipDownload'},
     {name: 'Relatório', source: 'Payroll'},
-    {name: 'Inf. Empresa', source: 'PersonalData'},
+    {name: 'Informações Pessoais', source: 'PersonalData'},
   ]);
 
   const renderMenusItems = ({name, source}: MenuItemsProps) => (
