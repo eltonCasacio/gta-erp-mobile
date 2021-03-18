@@ -5,15 +5,21 @@ import {StyleSheet, View} from 'react-native';
 import Theme from '../../styles/Theme';
 
 type SearchProps = {
-  items: string[];
+  items: any;
+  callback: Function;
 };
 
-const Search = ({items = []}: SearchProps) => {
+const Search = ({items, callback}: SearchProps) => {
   const [selecteditem, setSelecteditem] = useState('');
 
-  const pickers = items.map((item) => (
-    <Picker.Item key={item} label={String(item)} value={item} />
+  const pickers = items.map(({indice, value}: any) => (
+    <Picker.Item key={indice} label={value} value={indice} />
   ));
+
+  const handleSelectedMonth = (value: string) => {
+    callback(value);
+    setSelecteditem(value);
+  };
 
   return (
     <View style={styles.Wrapper}>
@@ -21,7 +27,7 @@ const Search = ({items = []}: SearchProps) => {
         dropdownIconColor={Theme.Colors.white}
         selectedValue={selecteditem}
         style={styles.pickerStyle}
-        onValueChange={(itemValue) => setSelecteditem(String(itemValue))}>
+        onValueChange={(itemValue) => handleSelectedMonth(String(itemValue))}>
         <Picker.Item label="Pesquisar" value={0} />
         {!!pickers && pickers}
       </Picker>

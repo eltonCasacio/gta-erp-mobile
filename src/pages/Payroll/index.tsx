@@ -1,22 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import {useQuery} from '@apollo/client';
-import GET_PAYROLL from '../../graphql/queries/GET_PAYROLL';
+import {GET_PAYROLL_BETWEEM_DATE} from '../../graphql/queries/GET_PAYROLL';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import * as S from './styles';
 
 import Search from '../../components/Search';
 import Card from '../../components/PayrollCard';
-import Button from '../../components/Button';
 import Rodape from '../../components/Rodape';
 import Modal from '../../components/Modal';
 import ModalContent from '../../components/ModalPayrollContent';
 
 import {groupHours, removeDuplicate} from '../../controllers/payroll';
-import {FormatDate} from '../../utils/formatDate';
-
-const items = ['1', '2', '3', '4', '5', '6'];
+import {Months} from '../../utils/weeksAndMonths';
+import {MesSeguinte} from '../../utils/formatDate';
 
 const Payroll = ({navigation}: any) => {
   const [user, setUser] = useState('');
@@ -25,6 +23,8 @@ const Payroll = ({navigation}: any) => {
   const [apontamentos, setApontamentos] = useState([]);
   const [selectedRegister, setSelectedRegister] = useState(['']);
   const [cards, setCards] = useState(['']);
+  const [month, setMonth] = useState('');
+  const [monthLimit, setMonthLimit] = useState('');
 
   const setModal = (dateRegister = new Date().toString()) => {
     let group = groupHours(dateRegister, apontamentos);
@@ -32,21 +32,14 @@ const Payroll = ({navigation}: any) => {
     setShowModal(!showModal);
   };
 
-  const {data} = useQuery(GET_PAYROLL, {
+  const {data} = useQuery(GET_PAYROLL_BETWEEM_DATE, {
     variables: {
       user,
-      date: FormatDate(new Date()).slice(0, 7),
+      dateStart: month,
+      dateEnd: monthLimit,
     },
-    pollInterval: 1000,
+    pollInterval: 500,
   });
-
-  const handleDownload = () => {
-    console.log('Download...');
-  };
-
-  const handleSave = async () => {
-    console.log('Salvando...');
-  };
 
   const getUser = async () => {
     const res = await AsyncStorage.getItem('user');
@@ -58,33 +51,32 @@ const Payroll = ({navigation}: any) => {
     }
   };
 
+  const setMonthSelected = (value: string) => {
+    const year = new Date().getFullYear();
+    setMonth(`${year}-${value}-01`);
+
+    let nextMonth = MesSeguinte(`${year}-${value}`);
+    setMonthLimit(`${nextMonth}-01`);
+  };
+
   useEffect(() => {
     getUser();
   }, [data]);
 
   return (
     <S.Wrapper>
-      <Search items={items} />
+      <Search items={Months} callback={setMonthSelected} />
       {data &&
         cards.map((date, indice: number) => (
           <Card key={indice} leftComponent={date} callback={setModal} />
         ))}
       <S.CardWrapper />
 
-      <S.ButtonWrapper>
-        <Button label="Download" callback={handleDownload} />
-      </S.ButtonWrapper>
-
       <Rodape navigation={navigation} />
 
       {showModal && (
         <Modal
-          children={
-            <ModalContent
-              handleSave={handleSave}
-              selectedRegister={selectedRegister}
-            />
-          }
+          children={<ModalContent selectedRegister={selectedRegister} />}
           callback={setModal}
         />
       )}

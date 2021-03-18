@@ -3,7 +3,7 @@ import {gql} from '@apollo/client';
 export const GET_REGISTER_HOURS = gql`
   query GET_REGISTER_HOUR($user: String!, $limit: Int!) {
     apontamentos(
-      sort: "registerHour:desc"
+      sort: "created_at:desc"
       limit: $limit
       where: {funcionario: {email: $user}}
     ) {

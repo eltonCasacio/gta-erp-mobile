@@ -12,3 +12,21 @@ export const FormatDate = (date = new Date()) => {
 export const FormatTime = () => {
   return new Date().toLocaleTimeString();
 };
+
+export const MesSeguinte = (data: string) => {
+  let num = 0;
+  num = Number(data.slice(5));
+  if (num < 9) {
+    let aux = Number(data.slice(5)) + 1;
+    let newData = data.slice(0, 6).concat(String(aux));
+    return newData;
+  }
+
+  if (num <= 11) {
+    let aux = Number(data.slice(5)) + 1;
+    let newData = data.slice(0, 5).concat(String(aux));
+    return newData;
+  }
+
+  return data;
+};
