@@ -5,18 +5,19 @@ import {StyleSheet, View} from 'react-native';
 import Theme from '../../styles/Theme';
 
 type SearchProps = {
-  items: any;
+  label: string;
+  years: any;
   callback: Function;
 };
 
-const Search = ({items, callback}: SearchProps) => {
+const SearchPayrollYear = ({label, years, callback}: SearchProps) => {
   const [selecteditem, setSelecteditem] = useState('');
 
-  const pickers = items.map(({indice, value}: any) => (
-    <Picker.Item key={value} label={value} value={indice} />
+  const pickers = years.map(({value}: any) => (
+    <Picker.Item key={value} label={value} value={value} />
   ));
 
-  const handleSelectedMonth = (value: string) => {
+  const handleSelectedYear = (value: string) => {
     callback(value);
     setSelecteditem(value);
   };
@@ -27,8 +28,8 @@ const Search = ({items, callback}: SearchProps) => {
         dropdownIconColor={Theme.Colors.white}
         selectedValue={selecteditem}
         style={styles.pickerStyle}
-        onValueChange={(itemValue) => handleSelectedMonth(String(itemValue))}>
-        <Picker.Item label="Pesquisar" />
+        onValueChange={(itemValue) => handleSelectedYear(String(itemValue))}>
+        <Picker.Item label={label} />
         {!!pickers && pickers}
       </Picker>
     </View>
@@ -45,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Search;
+export default SearchPayrollYear;

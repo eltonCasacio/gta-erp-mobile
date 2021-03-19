@@ -27,7 +27,7 @@ const DataTime = () => {
     let week = Weeks[new Date().getDay()];
     let month = Months[new Date().getMonth()];
 
-    setDate(`${week.slice(0, 3)} ${day}/${month.slice(0, 3)}`);
+    setDate(`${week.value.slice(0, 3)} ${day}/${month.value.slice(0, 3)}`);
   };
 
   useEffect(() => {

@@ -1,12 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import * as S from './styles';
 import React, {useState, useEffect} from 'react';
 import {useQuery} from '@apollo/client';
 import {GET_PAYROLL_BETWEEM_DATE} from '../../graphql/queries/GET_PAYROLL';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {getByEmail} from '../../services/queries';
+import {GET_PAYSLIP_YEARS} from '../../graphql/queries/GET_PAYSLIP_DOWNLOAD';
 
-import * as S from './styles';
-
-import Search from '../../components/Search';
+import SearchByMonth from '../../components/SearchPayroll/Mes';
+import SearchByYear from '../../components/SearchPayroll/Ano';
 import Card from '../../components/PayrollCard';
 import Rodape from '../../components/Rodape';
 import Modal from '../../components/Modal';
@@ -23,8 +25,12 @@ const Payroll = ({navigation}: any) => {
   const [apontamentos, setApontamentos] = useState([]);
   const [selectedRegister, setSelectedRegister] = useState(['']);
   const [cards, setCards] = useState(['']);
+  const [date, setDate] = useState('');
+  const [dateLimit, setDateLimit] = useState('');
+
   const [month, setMonth] = useState('');
-  const [monthLimit, setMonthLimit] = useState('');
+  const [year, setYear] = useState(String(new Date().getFullYear()));
+  const [years, setYears] = useState([]);
 
   const setModal = (dateRegister = new Date().toString()) => {
     let group = groupHours(dateRegister, apontamentos);
@@ -35,8 +41,8 @@ const Payroll = ({navigation}: any) => {
   const {data} = useQuery(GET_PAYROLL_BETWEEM_DATE, {
     variables: {
       user,
-      dateStart: month,
-      dateEnd: monthLimit,
+      dateStart: date,
+      dateEnd: dateLimit,
     },
     pollInterval: 500,
   });
@@ -51,21 +57,61 @@ const Payroll = ({navigation}: any) => {
     }
   };
 
-  const setMonthSelected = (value: string) => {
-    const year = new Date().getFullYear();
-    setMonth(`${year}-${value}-01`);
-
-    let nextMonth = MesSeguinte(`${year}-${value}`);
-    setMonthLimit(`${nextMonth}-01`);
+  const setMonthSelected = (mm: string) => {
+    setMonth(mm);
   };
+
+  const setYearSelected = (aaaa: string) => {
+    setYear(aaaa);
+  };
+
+  useEffect(() => {
+    setDate(`${year}-${month}-01`);
+    let nextMonth = MesSeguinte(`${year}-${month}`);
+    setDateLimit(`${nextMonth}-01`);
+  }, [month, year]);
 
   useEffect(() => {
     getUser();
   }, [data]);
 
+  const getYears = () => {
+    getByEmail(GET_PAYSLIP_YEARS).then((res) => {
+      let list = [''];
+
+      const listYear = res.payslips.map(({paymentDate}: any, indice: any) => {
+        if (!list.includes(paymentDate.slice(0, 4))) {
+          list.push(paymentDate.slice(0, 4));
+          return {
+            indice,
+            value: paymentDate.slice(0, 4),
+          };
+        }
+      });
+
+      let newList = listYear.filter((item: any) => item);
+      setYears(newList);
+    });
+  };
+
+  useEffect(() => {
+    getYears();
+  }, []);
+
   return (
     <S.Wrapper>
-      <Search items={Months} callback={setMonthSelected} />
+      <S.SearcWrapper>
+        <S.SearcItem>
+          <SearchByMonth
+            label="MÊS"
+            items={Months}
+            callback={setMonthSelected}
+          />
+        </S.SearcItem>
+        <S.SearcItem>
+          <SearchByYear label="ANO" years={years} callback={setYearSelected} />
+        </S.SearcItem>
+      </S.SearcWrapper>
       {data &&
         cards.map((date, indice: number) => (
           <Card key={indice} leftComponent={date} callback={setModal} />

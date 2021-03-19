@@ -30,5 +30,6 @@ export const Label = styled.Text`
 export const GroupInfo = styled.View`
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin: 12px 0;
 `;

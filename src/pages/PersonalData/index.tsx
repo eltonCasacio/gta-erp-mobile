@@ -4,10 +4,6 @@ import * as S from './styles';
 import Rodape from '../../components/Rodape';
 import {getPersonalData} from '../../controllers/personalData';
 
-type PersonalDataProps = {
-  navigation: any;
-};
-
 type EmployeeProps = {
   Nome: String;
   id: String;
@@ -19,7 +15,7 @@ type EmployeeProps = {
   };
 };
 
-const PersonalData = ({navigation}: PersonalDataProps) => {
+const PersonalData = ({navigation}: any) => {
   const [employee, setEmployee] = useState<EmployeeProps>();
 
   useEffect(() => {

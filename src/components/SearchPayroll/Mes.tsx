@@ -5,18 +5,19 @@ import {StyleSheet, View} from 'react-native';
 import Theme from '../../styles/Theme';
 
 type SearchProps = {
+  label: string;
   items: any;
   callback: Function;
 };
 
-const SearchPayslipDownload = ({items, callback}: SearchProps) => {
+const SearchPayrollMonth = ({label, items, callback}: SearchProps) => {
   const [selecteditem, setSelecteditem] = useState('');
 
-  const pickers = items.map(({value}: any, index: any) => (
-    <Picker.Item key={index + value} label={value} value={value} />
+  const pickers = items.map(({indice, value}: any) => (
+    <Picker.Item key={value} label={value} value={indice} />
   ));
 
-  const handleSelectedYear = (value: string) => {
+  const handleSelectedMonth = (value: string) => {
     callback(value);
     setSelecteditem(value);
   };
@@ -27,8 +28,8 @@ const SearchPayslipDownload = ({items, callback}: SearchProps) => {
         dropdownIconColor={Theme.Colors.white}
         selectedValue={selecteditem}
         style={styles.pickerStyle}
-        onValueChange={(itemValue) => handleSelectedYear(String(itemValue))}>
-        <Picker.Item key={'pesquisar'} label="Pesquisar" />
+        onValueChange={(itemValue) => handleSelectedMonth(String(itemValue))}>
+        <Picker.Item label={label} />
         {!!pickers && pickers}
       </Picker>
     </View>
@@ -45,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SearchPayslipDownload;
+export default SearchPayrollMonth;

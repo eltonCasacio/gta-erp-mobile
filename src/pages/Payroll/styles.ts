@@ -6,6 +6,16 @@ export const Wrapper = styled.View`
   justify-content: space-between;
 `;
 
+export const SearcWrapper = styled.View`
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: ${Theme.Spacings.great};
+`;
+
+export const SearcItem = styled.View`
+  width: 40%;
+`;
+
 export const CardWrapper = styled.ScrollView`
   margin-top: ${Theme.Spacings.medium};
 `;
