@@ -16,17 +16,7 @@ import Rodape from '../../components/Rodape';
 
 import * as S from './styles';
 
-type PayslipDownloadProps = {
-  navigation: any;
-};
-
-type HoleriteProps = {
-  paymentType: any;
-  paymentDate: any;
-  holerite: any;
-};
-
-const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
+const PayslipDownload = ({navigation}: any) => {
   const [email, setEmail] = useState('');
   const [years, setYears] = useState([{}]);
   const [year, setYear] = useState('');
@@ -35,7 +25,7 @@ const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
   const {data} = useQuery(GET_PAYSLIP_DOWNLOAD_BETWEEM_DATE, {
     variables: {
       email,
-      dateStart: year || '1990-01-01',
+      dateStart: year || '1980-01-01',
       dateEnd: yearLimit || `${Number(new Date().getFullYear()) + 1}-01-01`,
     },
     pollInterval: 1000,
@@ -47,7 +37,7 @@ const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
     if (supported) {
       await Linking.openURL(url);
     } else {
-      Alert.alert(`Don't know how to open this URL: ${url}`);
+      Alert.alert(`URL desconhecida: ${url}`);
     }
   };
 
@@ -96,10 +86,7 @@ const PayslipDownload = ({navigation}: PayslipDownloadProps) => {
       <S.CardWrapper>
         {data?.payslips &&
           data.payslips.map(
-            (
-              {paymentType, paymentDate, holerite}: HoleriteProps,
-              indice: number
-            ) => (
+            ({paymentType, paymentDate, holerite}: any, indice: number) => (
               <Card
                 key={indice}
                 leftComponent={paymentType}
