@@ -20,6 +20,6 @@ export const ForgotPassword = styled.Text`
 `;
 
 export const ErrorMessage = styled.Text`
-  color: ${Theme.Colors.white};
+  color: red;
   font-size: ${Theme.Font.medium};
 `;

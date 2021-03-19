@@ -19,7 +19,7 @@ export type RegisterHoursProps = {
 
 const RegisterHours = ({navigation}: RegisterHoursProps) => {
   const [user, setUser] = useState('');
-  const [apontamentos, setApontamentos] = useState([]);
+  const [apontamentos, setApontamentos] = useState<any>();
 
   const {data} = useQuery(GET_REGISTER_HOURS, {
     variables: {
@@ -38,7 +38,7 @@ const RegisterHours = ({navigation}: RegisterHoursProps) => {
 
       setApontamentos([...removedFirstItem, newApontamento]);
     } catch (error) {
-      console.error(error);
+      console.error('handleCreateRegister', error);
     }
   };
 
@@ -57,12 +57,15 @@ const RegisterHours = ({navigation}: RegisterHoursProps) => {
   return (
     <S.Wrapper>
       <S.WrapperTimeline>
-        {apontamentos.map(({registerDate, registerHour, tipo}: any, indice) => (
-          <S.TextWrapper key={indice}>
-            <S.Card>{tipo}</S.Card>
-            <S.Card>{`${registerDate}   -   ${registerHour}`}</S.Card>
-          </S.TextWrapper>
-        ))}
+        {apontamentos &&
+          apontamentos.map(
+            ({registerDate, registerHour, tipo}: any, indice: any) => (
+              <S.TextWrapper key={indice}>
+                <S.Card>{tipo}</S.Card>
+                <S.Card>{`${registerDate}   -   ${registerHour}`}</S.Card>
+              </S.TextWrapper>
+            )
+          )}
       </S.WrapperTimeline>
 
       <S.InfoDateTime>

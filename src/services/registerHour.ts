@@ -24,7 +24,10 @@ export const createRegisterHoursService = async (
   apontamentos = [],
   query: DocumentNode
 ) => {
-  let tipo = apontamentos[0].tipo === 'ENTRADA' ? 'SAIDA' : 'ENTRADA';
+  let tipo = 'ENTRADA';
+  if (apontamentos[0]) {
+    tipo = apontamentos[0].tipo === 'ENTRADA' ? 'SAIDA' : 'ENTRADA';
+  }
 
   try {
     const data = await withMutationVariable({

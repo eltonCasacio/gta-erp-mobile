@@ -1,4 +1,4 @@
-import GET_PAYSLIP_DOWNLOAD from '../graphql/queries/GET_PAYSLIP_DOWNLOAD';
+import {GET_PAYSLIP_DOWNLOAD} from '../graphql/queries/GET_PAYSLIP_DOWNLOAD';
 import {getByEmail} from '../services/queries';
 
 export const getPayslipDownload = async () => {

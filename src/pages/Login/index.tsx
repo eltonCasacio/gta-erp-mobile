@@ -9,8 +9,8 @@ import Buttom from '../../components/Button';
 import {auth} from '../../services/login';
 
 const Login = ({navigation}: any) => {
-  const [user, setUser] = useState('eltoncasacio@hotmail.com');
-  const [password, setPassword] = useState('Strapi@2');
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
   const [hasError, setHasError] = useState(false);
 
   const handleSetUser = (text: string) => setUser(text);
@@ -19,11 +19,9 @@ const Login = ({navigation}: any) => {
   const login = async () => {
     try {
       await auth(user, password);
-      console.log('Autenticando...', user, password);
       navigation.navigate('RegisterHours', {user});
     } catch (error) {
       setHasError(true);
-      console.log('Erro ao tentar autenticar usuário', error);
     }
   };
 

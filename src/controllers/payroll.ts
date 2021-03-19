@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import GET_PAYROLL from '../graphql/queries/GET_PAYROLL';
+import {GET_PAYROLL} from '../graphql/queries/GET_PAYROLL';
 import {withQueryVariable} from '../services/queries';
 
 import {FormatDate} from '../utils/formatDate';
@@ -40,8 +40,6 @@ export const groupHours = (
   apontamentos = []
 ): string[] => {
   let hours = [''];
-
-  console.log('GROUP HOURS', apontamentos);
 
   apontamentos.forEach(({registerDate, registerHour, tipo}) => {
     const onlyDate = String(registerDate);
