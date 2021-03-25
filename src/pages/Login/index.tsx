@@ -31,8 +31,12 @@ const Login = ({navigation}: any) => {
       {hasError && <S.ErrorMessage>Usuário/Senha incorreto(s)</S.ErrorMessage>}
       <S.InputContainer>
         <Input placeholder="usuário" onChangeText={handleSetUser} />
-        <Input placeholder="senha" onChangeText={handleSetPassword} />
-        <TouchableOpacity onPress={() => navigation.navigate('#')}>
+        <Input
+          placeholder="senha"
+          onChangeText={handleSetPassword}
+          passwordType={true}
+        />
+        <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
           <S.ForgotPassword>Esqueci a senha</S.ForgotPassword>
         </TouchableOpacity>
       </S.InputContainer>

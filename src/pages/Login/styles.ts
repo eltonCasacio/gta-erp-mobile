@@ -23,3 +23,8 @@ export const ErrorMessage = styled.Text`
   color: red;
   font-size: ${Theme.Font.medium};
 `;
+
+export const Label = styled.Text`
+  font-size: ${Theme.Font.medium};
+  color: ${Theme.Colors.white};
+`;

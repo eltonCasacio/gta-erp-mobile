@@ -131,7 +131,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.gta"
+        applicationId "br.com.c3rinnovation.gta_payslip_register_hour"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
