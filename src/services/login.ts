@@ -1,6 +1,7 @@
 import client from '../graphql/client';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AUTHORIZATION from '../graphql/queries/AUTHORIZATION';
+import GET_CELNUMBER from '../graphql/queries/GET_CELNUMBER';
 import {actionLink} from '../utils/MyLink';
 
 export const auth = async (user: string, password: string) => {
@@ -30,14 +31,20 @@ export const auth = async (user: string, password: string) => {
 };
 
 export const resetPasswordByWhatsapp = async (username: string) => {
-  const celNumber = '19971196825';
-
-  const url = `https://api.whatsapp.com/send?phone=55${celNumber}&text=solicito uma nova senha ${
-    username ? ', para o usuário ' + username : ''
-  }`;
-
   try {
-    actionLink(url);
+    const {data} = await client.query({
+      query: GET_CELNUMBER,
+    });
+
+    if (data.configuracoes.length > 0) {
+      let celNumber = data.configuracoes[0].Celular;
+
+      const url = `https://api.whatsapp.com/send?phone=${celNumber}&text=solicito uma nova senha ${
+        username ? ', para o usuário ' + username : ''
+      }`;
+
+      actionLink(url);
+    }
   } catch (error) {
     throw error;
   }
