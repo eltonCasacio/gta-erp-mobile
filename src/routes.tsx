@@ -3,7 +3,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 
 import Login from './pages/Login';
-import ForgotPassword from './pages/Login/forgotPassword';
 
 import RegisterHours from './pages/RegisterHours';
 import PayslipDownload from './pages/PayslipDownload';
@@ -27,7 +26,6 @@ const Routes = () => {
               cardStyle: {backgroundColor: Theme.Colors.primary},
             }}>
             <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
             <Stack.Screen name="RegisterHours" component={RegisterHours} />
             <Stack.Screen name="PayslipDownload" component={PayslipDownload} />
             <Stack.Screen name="Payroll" component={Payroll} />

@@ -15,8 +15,8 @@ export const InputContainer = styled.View`
 export const ForgotPassword = styled.Text`
   align-self: center;
   color: ${Theme.Colors.white};
-  font-size: ${Theme.Font.medium};
-  margin-top: ${Theme.Spacings.medium};
+  font-size: ${Theme.Font.great};
+  margin: 15px 0 20px 0;
 `;
 
 export const ErrorMessage = styled.Text`
@@ -24,7 +24,15 @@ export const ErrorMessage = styled.Text`
   font-size: ${Theme.Font.medium};
 `;
 
+export const LabelWrapper = styled.View`
+  flex-direction: row;
+  align-self: center;
+  align-items: center;
+  margin-bottom: ${Theme.Spacings.medium};
+`;
+
 export const Label = styled.Text`
   font-size: ${Theme.Font.medium};
   color: ${Theme.Colors.white};
+  margin-right: ${Theme.Spacings.medium};
 `;

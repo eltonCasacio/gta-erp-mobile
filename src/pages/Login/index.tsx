@@ -1,34 +1,55 @@
 import React, {useState} from 'react';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, Alert} from 'react-native';
+
+import Icon from 'react-native-vector-icons/FontAwesome';
 import * as S from './styles';
 
 import Logo from '../../components/Logo';
 import Input from '../../components/Input';
 import Buttom from '../../components/Button';
 
-import {auth} from '../../services/login';
+import {
+  auth,
+  resetPasswordByWhatsapp,
+  resetPasswordSendEmail,
+} from '../../services/login';
 
 const Login = ({navigation}: any) => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
-  const [hasError, setHasError] = useState(false);
 
   const handleSetUser = (text: string) => setUser(text);
   const handleSetPassword = (text: string) => setPassword(text);
 
-  const login = async () => {
+  const handleWhatsapp = () => {
+    try {
+      resetPasswordByWhatsapp(user);
+    } catch (error) {
+      Alert.alert(error);
+    }
+  };
+
+  const handleSendByEmail = async () => {
+    try {
+      let msg = resetPasswordSendEmail(user);
+      Alert.alert(msg);
+    } catch (error) {
+      Alert.alert(error);
+    }
+  };
+
+  const handleLogin = async () => {
     try {
       await auth(user, password);
       navigation.navigate('RegisterHours', {user});
     } catch (error) {
-      setHasError(true);
+      Alert.alert(error);
     }
   };
 
   return (
     <S.Wrapper>
       <Logo />
-      {hasError && <S.ErrorMessage>Usuário/Senha incorreto(s)</S.ErrorMessage>}
       <S.InputContainer>
         <Input placeholder="usuário" onChangeText={handleSetUser} />
         <Input
@@ -36,11 +57,24 @@ const Login = ({navigation}: any) => {
           onChangeText={handleSetPassword}
           passwordType={true}
         />
-        <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
-          <S.ForgotPassword>Esqueci a senha</S.ForgotPassword>
+
+        <S.ForgotPassword>Esqueci minha senha</S.ForgotPassword>
+
+        <TouchableOpacity onPress={handleSendByEmail}>
+          <S.LabelWrapper>
+            <S.Label>enviar nova senha por email</S.Label>
+            <Icon name="envelope" size={20} color="#fff" />
+          </S.LabelWrapper>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={handleWhatsapp}>
+          <S.LabelWrapper>
+            <S.Label>entrar em contato com o RH</S.Label>
+            <Icon name="whatsapp" size={25} color="#24e75e" />
+          </S.LabelWrapper>
         </TouchableOpacity>
       </S.InputContainer>
-      <Buttom label="ENTRAR" callback={login} />
+      <Buttom label="ENTRAR" callback={handleLogin} />
     </S.Wrapper>
   );
 };
