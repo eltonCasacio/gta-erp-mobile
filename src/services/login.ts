@@ -4,11 +4,13 @@ import AUTHORIZATION from '../graphql/queries/AUTHORIZATION';
 import GET_CELNUMBER from '../graphql/queries/GET_CELNUMBER';
 import {actionLink} from '../utils/MyLink';
 
+import axios from './axiosAPI';
+
 export const auth = async (user: string, password: string) => {
   if (!user || !password) {
     let username = user ? '' : 'Usuário';
     let pwd = password ? '' : 'Senha';
-    throw 'Preencha o campo '.concat(username + ' ' + pwd);
+    throw 'Preencha o campo '.concat(username + ' e ' + pwd);
   }
 
   await AsyncStorage.removeItem('token');
@@ -50,10 +52,11 @@ export const resetPasswordByWhatsapp = async (username: string) => {
   }
 };
 
-export const resetPasswordSendEmail = (user: string) => {
+export const resetPasswordSendEmail = async (user: string) => {
   if (!user) {
     return 'Preencha o campo usuário';
   }
 
+  axios.post('password', {username: user}).then(({data}) => console.log(data));
   return 'Uma nova senha foi enviada para seu e-mail';
 };

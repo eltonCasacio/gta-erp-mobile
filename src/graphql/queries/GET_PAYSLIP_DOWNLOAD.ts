@@ -1,8 +1,10 @@
 import {gql} from '@apollo/client';
 
 export const GET_PAYSLIP_DOWNLOAD = gql`
-  query GET_PAYSLIPDOWNLOAD($email: String) {
-    payslips(where: {funcionario: {email: $email}}) {
+  query GET_PAYSLIPDOWNLOAD($user: String) {
+    payslips(
+      where: {funcionario: {users_permissions_user: {username: $user}}}
+    ) {
       paymentType
       paymentDate
       holerite {
@@ -16,13 +18,13 @@ export const GET_PAYSLIP_DOWNLOAD = gql`
 
 export const GET_PAYSLIP_DOWNLOAD_BETWEEM_DATE = gql`
   query GET_PAYSLIP_DOWNLOAD_BETWEEM_DATE(
-    $email: String!
+    $user: String!
     $dateStart: String!
     $dateEnd: String!
   ) {
     payslips(
       where: {
-        funcionario: {email: $email}
+        funcionario: {users_permissions_user: {username: $user}}
         paymentDate_gte: $dateStart
         paymentDate_lt: $dateEnd
       }
@@ -39,8 +41,10 @@ export const GET_PAYSLIP_DOWNLOAD_BETWEEM_DATE = gql`
 `;
 
 export const GET_PAYSLIP_YEARS = gql`
-  query GET_PAYSLIP_YEARS($email: String!) {
-    payslips(where: {funcionario: {email: $email}}) {
+  query GET_PAYSLIP_YEARS($user: String!) {
+    payslips(
+      where: {funcionario: {users_permissions_user: {username: $user}}}
+    ) {
       paymentDate
     }
   }

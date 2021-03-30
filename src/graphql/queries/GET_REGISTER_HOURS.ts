@@ -5,7 +5,7 @@ export const GET_REGISTER_HOURS = gql`
     apontamentos(
       sort: "created_at:desc"
       limit: $limit
-      where: {funcionario: {email: $user}}
+      where: {funcionario: {users_permissions_user: {username: $user}}}
     ) {
       registerDate
       registerHour

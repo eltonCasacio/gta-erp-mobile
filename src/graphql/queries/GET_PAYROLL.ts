@@ -3,7 +3,10 @@ import {gql} from '@apollo/client';
 export const GET_PAYROLL = gql`
   query GET_PAYROLL($user: String!, $date: String!) {
     apontamentos(
-      where: {funcionario: {email: $user}, registerDate_gte: $date}
+      where: {
+        funcionario: {users_permissions_user: {username: $user}}
+        registerDate_gte: $date
+      }
     ) {
       registerDate
       registerHour
@@ -20,7 +23,7 @@ export const GET_PAYROLL_BETWEEM_DATE = gql`
   ) {
     apontamentos(
       where: {
-        funcionario: {email: $user}
+        funcionario: {users_permissions_user: {username: $user}}
         registerDate_gte: $dateStart
         registerDate_lt: $dateEnd
       }

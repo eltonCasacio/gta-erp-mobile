@@ -21,9 +21,9 @@ const Login = ({navigation}: any) => {
   const handleSetUser = (text: string) => setUser(text);
   const handleSetPassword = (text: string) => setPassword(text);
 
-  const handleWhatsapp = () => {
+  const handleWhatsapp = async () => {
     try {
-      resetPasswordByWhatsapp(user);
+      await resetPasswordByWhatsapp(user);
     } catch (error) {
       Alert.alert(error);
     }
@@ -31,7 +31,7 @@ const Login = ({navigation}: any) => {
 
   const handleSendByEmail = async () => {
     try {
-      let msg = resetPasswordSendEmail(user);
+      let msg = await resetPasswordSendEmail(user);
       Alert.alert(msg);
     } catch (error) {
       Alert.alert(error);
