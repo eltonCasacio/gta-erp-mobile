@@ -4,7 +4,7 @@ import React, {useState, useEffect} from 'react';
 import {useQuery} from '@apollo/client';
 import {GET_PAYROLL_BETWEEM_DATE} from '../../graphql/queries/GET_PAYROLL';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {getByEmail} from '../../services/queries';
+import {getByUser} from '../../services/queries';
 import {GET_PAYSLIP_YEARS} from '../../graphql/queries/GET_PAYSLIP_DOWNLOAD';
 
 import SearchByMonth from '../../components/SearchPayroll/Mes';
@@ -76,7 +76,7 @@ const Payroll = ({navigation}: any) => {
   }, [data]);
 
   const getYears = () => {
-    getByEmail(GET_PAYSLIP_YEARS).then((res) => {
+    getByUser(GET_PAYSLIP_YEARS).then((res) => {
       let list = [''];
 
       const listYear = res.payslips.map(({paymentDate}: any, indice: any) => {

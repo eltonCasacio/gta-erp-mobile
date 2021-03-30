@@ -8,7 +8,7 @@ import {
 } from '../../graphql/queries/GET_PAYSLIP_DOWNLOAD';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import {getByEmail} from '../../services/queries';
+import {getByUser} from '../../services/queries';
 
 import Search from '../../components/SearchPayslipDownload';
 import Card from '../../components/PayslipeCard';
@@ -17,21 +17,26 @@ import Rodape from '../../components/Rodape';
 import * as S from './styles';
 
 const PayslipDownload = ({navigation}: any) => {
-  const [email, setEmail] = useState('');
+  const [User, setUser] = useState('');
   const [years, setYears] = useState([{}]);
   const [year, setYear] = useState('');
   const [yearLimit, setYearLimit] = useState('');
 
   const {data} = useQuery(GET_PAYSLIP_DOWNLOAD_BETWEEM_DATE, {
     variables: {
-      email,
+      user: User,
       dateStart: year || '1980-01-01',
       dateEnd: yearLimit || `${Number(new Date().getFullYear()) + 1}-01-01`,
     },
     pollInterval: 1000,
   });
 
-  const handleDownload = async (url: string) => {
+  const handleDownload = async (holerite: any) => {
+    if (!holerite[0].url) {
+      return;
+    }
+    const url = holerite[0].url;
+
     const supported = await Linking.canOpenURL(url);
 
     if (supported) {
@@ -46,17 +51,17 @@ const PayslipDownload = ({navigation}: any) => {
     setYearLimit(`${Number(value) + 1}-01-01`);
   };
 
-  const handleSetEmail = async () => {
+  const handlesetUser = async () => {
     const res = await AsyncStorage.getItem('user');
-    setEmail(String(res));
+    setUser(String(res));
   };
 
   useEffect(() => {
-    handleSetEmail();
+    handlesetUser();
   }, [data]);
 
   const getYears = () => {
-    getByEmail(GET_PAYSLIP_YEARS).then((res) => {
+    getByUser(GET_PAYSLIP_YEARS).then((res) => {
       let list = [''];
 
       const listYear = res.payslips.map(({paymentDate}: any, indice: any) => {
@@ -91,7 +96,7 @@ const PayslipDownload = ({navigation}: any) => {
                 key={indice}
                 leftComponent={paymentType}
                 rigthComponent={paymentDate}
-                callback={() => handleDownload(holerite.url)}
+                callback={() => handleDownload(holerite)}
               />
             )
           )}

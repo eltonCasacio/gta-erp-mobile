@@ -12,13 +12,13 @@ type MutationProps = {
   variables: {};
 };
 
-export const getByEmail = async (query: any) => {
-  const email = await AsyncStorage.getItem('user');
+export const getByUser = async (query: any) => {
+  const user = await AsyncStorage.getItem('user');
 
   try {
     const {data} = await client.query({
       query,
-      variables: {email},
+      variables: {user},
     });
     return data;
   } catch (error) {

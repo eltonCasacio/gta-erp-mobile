@@ -1,9 +1,9 @@
 import GET_PERSONAL_DATA from '../graphql/queries/GET_PERSONAL_DATA';
-import {getByEmail} from '../services/queries';
+import {getByUser} from '../services/queries';
 
 export const getPersonalData = async () => {
   try {
-    return await getByEmail(GET_PERSONAL_DATA);
+    return await getByUser(GET_PERSONAL_DATA);
   } catch (error) {
     throw `ERRO AO PEGAR DADOS DO FUNCIONARIO${error}`;
   }
