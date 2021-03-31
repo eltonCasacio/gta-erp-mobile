@@ -57,6 +57,10 @@ export const resetPasswordSendEmail = async (user: string) => {
     return 'Preencha o campo usuário';
   }
 
-  axios.post('password', {username: user}).then(({data}) => console.log(data));
-  return 'Uma nova senha foi enviada para seu e-mail';
+  try {
+    axios.post('password', {username: user});
+    return 'Uma nova senha foi enviada para seu e-mail';
+  } catch (error) {
+    return 'Não foi possível fazer o reset de senha, favor entrar em contato com RH';
+  }
 };
