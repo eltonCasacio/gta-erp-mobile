@@ -5,12 +5,15 @@ import GET_CELNUMBER from '../graphql/queries/GET_CELNUMBER';
 import {actionLink} from '../utils/MyLink';
 
 import axios from './axiosAPI';
+import {Alert} from 'react-native';
 
 export const auth = async (user: string, password: string) => {
-  if (!user || !password) {
-    let username = user ? '' : 'Usuário';
-    let pwd = password ? '' : 'Senha';
-    throw 'Preencha o campo '.concat(username + ' e ' + pwd);
+  if (!user) {
+    throw 'Preencha o campo Usuário';
+  }
+
+  if (!password) {
+    throw 'Preencha o campo Senha';
   }
 
   await AsyncStorage.removeItem('token');
@@ -54,20 +57,11 @@ export const resetPasswordByWhatsapp = async (username: string) => {
 
 export const resetPasswordSendEmail = async (user: string) => {
   if (!user) {
-    return 'Preencha o campo usuário';
+    throw 'Preencha o campo usuário';
   }
 
-  let msg = '';
-
-  await axios
-    .post('password', {username: user})
-    .then(() => {
-      msg = 'Uma nova senha foi enviada para seu e-mail';
-    })
-    .catch(() => {
-      msg =
-        'Não foi possível fazer o reset de senha, favor entrar em contato com RH';
-    });
-
-  return msg;
+  axios.post('password', {username: user}).then(({data}) => {
+    const teste = data.msg;
+    Alert.alert(teste);
+  });
 };

@@ -31,8 +31,7 @@ const Login = ({navigation}: any) => {
 
   const handleSendByEmail = async () => {
     try {
-      let msg = await resetPasswordSendEmail(user);
-      Alert.alert(msg);
+      await resetPasswordSendEmail(user);
     } catch (error) {
       Alert.alert(error);
     }
