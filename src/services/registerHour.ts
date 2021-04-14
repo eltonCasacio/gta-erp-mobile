@@ -32,14 +32,18 @@ export const createRegisterHoursService = async (
   try {
     const data = await withMutationVariable({
       mutation: query,
-      variables: generateVariables(17, tipo),
+      variables: generateVariables(apontamentos[0].funcionario.id, tipo),
     });
 
     const {apontamento} = data.createApontamento;
 
     return apontamento;
   } catch (error) {
-    saveOnLocalDatabase(apontamentos, generateVariables(17, tipo));
+    saveOnLocalDatabase(
+      apontamentos,
+      generateVariables(apontamentos[0].funcionario.id, tipo)
+    );
+    throw error;
   }
 };
 
@@ -48,11 +52,11 @@ const saveOnLocalDatabase = (apontamentos = [], typeDateHour = {}) => {
 };
 
 const generateVariables = (id: Number, tipo = 'ENTRADA') => {
-  const ID = id;
+  // console.log('GENERATE', id);
   return {
     tipo,
     date: FormatDate(new Date()),
     hour: FormatTime(),
-    ID,
+    ID: id,
   };
 };

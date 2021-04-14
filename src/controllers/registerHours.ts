@@ -23,6 +23,6 @@ export const createRegisterHours = async (apontamentos = []) => {
   try {
     return await createRegisterHoursService(apontamentos, CREATE_REGISTERHOURS);
   } catch (error) {
-    throw 'ERRO AO CRIAR APONTAMENTO:::' + error;
+    throw error;
   }
 };

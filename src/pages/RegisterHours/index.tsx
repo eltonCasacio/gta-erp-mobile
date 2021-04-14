@@ -11,6 +11,7 @@ import Button from '../../components/Button';
 import Rodape from '../../components/Rodape';
 
 import {createRegisterHours} from '../../controllers/registerHours';
+import {Alert} from 'react-native';
 
 export type RegisterHoursProps = {
   navigation: any;
@@ -38,7 +39,8 @@ const RegisterHours = ({navigation}: RegisterHoursProps) => {
 
       setApontamentos([...removedFirstItem, newApontamento]);
     } catch (error) {
-      console.error('handleCreateRegister', error);
+      console.log('Erro ao realizar apontamento', error);
+      Alert.alert('Erro ao realizar apontamento');
     }
   };
 

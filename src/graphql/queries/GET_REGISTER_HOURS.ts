@@ -11,6 +11,7 @@ export const GET_REGISTER_HOURS = gql`
       registerHour
       tipo
       funcionario {
+        id
         Nome
       }
     }
